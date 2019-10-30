@@ -39,4 +39,4 @@ export { default as methodVector } from './src/methods/methodVector';
 export { default as Point } from './src/Point';
 export { default as Vector } from './src/Vector';
 
-// addon(is, enforce, method);
+import './src/addon';

@@ -1,6 +1,6 @@
 {
 	"name": "type-enforcer-math-addon",
-	"version": "1.0.0-beta.0",
+	"version": "1.0.0-beta.1",
 	"description": "An addon for type-enforcer with Math related data types and enforcer functions",
 	"main": "index.js",
 	"scripts": {
@@ -73,8 +73,8 @@
 	},
 	"homepage": "https://github.com/DarrenPaulWright/type-enforcer-math-addon#readme",
 	"dependencies": {
-		"object-agent": "^1.2.0",
-		"type-enforcer": "^1.0.0-beta.1"
+		"object-agent": "^1.3.0",
+		"type-enforcer": "^1.0.0-beta.2"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.6.4",
