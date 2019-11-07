@@ -8,7 +8,7 @@ const SEPARATOR = ',';
  *
  * @example
  * ``` javascript
- * import { Point } from 'type-enforcer-math-addon';
+ * import { Point } from 'type-enforcer-math';
  *
  * const point1 = new Point();
  * console.log(point1.toString());

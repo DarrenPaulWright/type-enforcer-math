@@ -1,29 +1,22 @@
 const testRunnerConfig = require('test-runner-config');
 const config = require('./testRunner.config.js');
 
-const singleRun = process.argv.includes('--single-run');
-
-const exclude = (file) => {
-	return {
-		pattern: file,
-		included: false
-	};
-};
+const isSingleRun = process.argv.includes('--single-run');
 
 const files = testRunnerConfig.getKarmaFiles(config, {
-	src: exclude
-});
-const preprocessors = {};
-testRunnerConfig.getKarmaFiles(config, {
-	src: exclude
-}).files.forEach((pattern) => {
+	src: (file) => ({pattern: file, included: false})
+}).files;
+
+const preprocessors = files.reduce((result, pattern) => {
 	if (pattern.included !== false) {
-		preprocessors[pattern] = ['webpack'];
+		result[pattern] = ['webpack'];
 	}
-});
+
+	return result;
+}, {});
 
 const reporters = ['brief', 'coverage'];
-if (singleRun) {
+if (isSingleRun) {
 	reporters.push('coveralls');
 }
 
@@ -36,12 +29,12 @@ module.exports = function(config) {
 				flags: ['-headless']
 			}
 		},
-		files: files.files,
+		files: files,
 		frameworks: ['mocha'],
 		preprocessors: preprocessors,
 		reporters: reporters,
 		briefReporter: {
-			renderOnRunCompleteOnly: singleRun
+			renderOnRunCompleteOnly: isSingleRun
 		},
 		coverageReporter: {
 			type: 'lcov',

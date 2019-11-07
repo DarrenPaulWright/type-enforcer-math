@@ -1,57 +1,56 @@
 {
-	"name": "type-enforcer-math-addon",
-	"version": "1.0.0-beta.1",
-	"description": "An addon for type-enforcer with Math related data types and enforcer functions",
+	"name": "type-enforcer-math",
+	"version": "1.0.0-beta.2",
+	"description": "An extension of type-enforcer with Math related data types and enforcer functions",
 	"main": "index.js",
+	"sideEffects": false,
 	"scripts": {
 		"test": "karma start --single-run",
 		"test-watch": "karma start",
-		"patch": "npm version patch -m \"Increment patch version to %s\" && npm publish",
-		"minor": "npm version minor -m \"Increment minor version to %s\" && npm publish",
-		"major": "npm version major -m \"Increment major version to %s\" && npm publish",
-		"docs-readme": "jsdoc2md index.js > README.md -t docs/docs.hbs --plugin dmd-readable",
-		"docs-enforce": "jsdoc2md src/enforcer/**/*.js > docs/enforce.md -t docs/docs.hbs --plugin dmd-readable",
-		"docs-method": "jsdoc2md src/methods/**/*.js > docs/method.md -t docs/docs.hbs --plugin dmd-readable",
-		"docs-checks": "jsdoc2md src/checks/**/*.js > docs/checks.md -t docs/docs.hbs --plugin dmd-readable",
-		"docs-point": "jsdoc2md src/Point.js > docs/Point.md -t docs/docs.hbs --plugin dmd-readable",
-		"docs-vector": "jsdoc2md src/Vector.js > docs/Vector.md -t docs/docs.hbs --plugin dmd-readable",
-		"docs": "npm run docs-readme && npm run docs-enforce && npm run docs-method && npm run docs-checks && npm run docs-point && npm run docs-vector"
+		"version": "npm run docs && git add docs",
+		"docs:readme": "jsdoc2md index.js > README.md",
+		"docs:enforce": "jsdoc2md src/enforcer/**/*.js > docs/enforce.md",
+		"docs:method": "jsdoc2md src/methods/**/*.js > docs/method.md",
+		"docs:checks": "jsdoc2md src/checks/**/*.js > docs/checks.md",
+		"docs:point": "jsdoc2md src/Point.js > docs/Point.md",
+		"docs:vector": "jsdoc2md src/Vector.js > docs/Vector.md",
+		"docs": "run-p \"docs:* -- -t docs/docs.hbs --plugin dmd-readable\""
 	},
 	"badges": [
 		{
 			"name": "npm",
-			"image": "https://img.shields.io/npm/v/type-enforcer-math-addon.svg",
-			"url": "https://npmjs.com/package/type-enforcer-math-addon"
+			"image": "https://img.shields.io/npm/v/type-enforcer-math.svg",
+			"url": "https://npmjs.com/package/type-enforcer-math"
 		},
 		{
 			"name": "build",
-			"image": "https://travis-ci.org/DarrenPaulWright/type-enforcer-math-addon.svg?branch=master",
-			"url": "https://travis-ci.org/DarrenPaulWright/type-enforcer-math-addon"
+			"image": "https://travis-ci.org/DarrenPaulWright/type-enforcer-math.svg?branch=master",
+			"url": "https://travis-ci.org/DarrenPaulWright/type-enforcer-math"
 		},
 		{
 			"name": "coverage",
-			"image": "https://coveralls.io/repos/github/DarrenPaulWright/type-enforcer-math-addon/badge.svg?branch=master",
-			"url": "https://coveralls.io/github/DarrenPaulWright/type-enforcer-math-addon?branch=master"
+			"image": "https://coveralls.io/repos/github/DarrenPaulWright/type-enforcer-math/badge.svg?branch=master",
+			"url": "https://coveralls.io/github/DarrenPaulWright/type-enforcer-math?branch=master"
 		},
 		{
 			"name": "deps",
-			"image": "https://david-dm.org/darrenpaulwright/type-enforcer-math-addon.svg",
-			"url": "https://david-dm.org/darrenpaulwright/type-enforcer-math-addon"
+			"image": "https://david-dm.org/darrenpaulwright/type-enforcer-math.svg",
+			"url": "https://david-dm.org/darrenpaulwright/type-enforcer-math"
 		},
 		{
 			"name": "size",
-			"image": "https://packagephobia.now.sh/badge?p=type-enforcer-math-addon",
-			"url": "https://packagephobia.now.sh/result?p=type-enforcer-math-addon"
+			"image": "https://packagephobia.now.sh/badge?p=type-enforcer-math",
+			"url": "https://packagephobia.now.sh/result?p=type-enforcer-math"
 		},
 		{
 			"name": "vulnerabilities",
-			"image": "https://snyk.io/test/github/DarrenPaulWright/type-enforcer-math-addon/badge.svg?targetFile=package.json",
-			"url": "https://snyk.io/test/github/DarrenPaulWright/type-enforcer-math-addon?targetFile=package.json"
+			"image": "https://snyk.io/test/github/DarrenPaulWright/type-enforcer-math/badge.svg?targetFile=package.json",
+			"url": "https://snyk.io/test/github/DarrenPaulWright/type-enforcer-math?targetFile=package.json"
 		},
 		{
 			"name": "license",
-			"image": "https://img.shields.io/github/license/DarrenPaulWright/type-enforcer-math-addon.svg",
-			"url": "https://npmjs.com/package/type-enforcer-math-addon/LICENSE.md"
+			"image": "https://img.shields.io/github/license/DarrenPaulWright/type-enforcer-math.svg",
+			"url": "https://npmjs.com/package/type-enforcer-math/LICENSE.md"
 		}
 	],
 	"files": [
@@ -59,7 +58,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/DarrenPaulWright/type-enforcer-math-addon.git"
+		"url": "git+https://github.com/DarrenPaulWright/type-enforcer-math.git"
 	},
 	"keywords": [
 		"type",
@@ -69,16 +68,16 @@
 	"author": "Darren Paul Wright <Darren@DarrenPaulWright.com>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/DarrenPaulWright/type-enforcer-math-addon/issues"
+		"url": "https://github.com/DarrenPaulWright/type-enforcer-math/issues"
 	},
-	"homepage": "https://github.com/DarrenPaulWright/type-enforcer-math-addon#readme",
+	"homepage": "https://github.com/DarrenPaulWright/type-enforcer-math#readme",
 	"dependencies": {
 		"object-agent": "^1.3.0",
 		"type-enforcer": "^1.0.0-beta.2"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.6.4",
-		"@babel/preset-env": "^7.6.3",
+		"@babel/core": "^7.7.2",
+		"@babel/preset-env": "^7.7.1",
 		"babel-eslint": "^10.0.3",
 		"babel-loader": "^8.0.6",
 		"babel-plugin-istanbul": "^5.2.0",
@@ -98,7 +97,8 @@
 		"karma-mocha": "^1.3.0",
 		"karma-webpack": "^4.0.2",
 		"mocha": "^6.2.2",
-		"test-runner-config": "^0.5.0",
+		"npm-run-all": "^4.1.5",
+		"test-runner-config": "^1.0.0",
 		"type-enforcer-test-helper": "^1.0.1",
 		"wallaby-webpack": "^3.9.15",
 		"webpack": "^4.41.2"

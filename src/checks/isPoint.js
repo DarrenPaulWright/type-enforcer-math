@@ -5,7 +5,7 @@ import Point from '../Point';
  *
  * @example
  * ``` javascript
- * import { isPoint } from 'type-enforcer-math-addon';
+ * import { isPoint } from 'type-enforcer-math';
  *
  * isPoint(new Point());
  * // => true

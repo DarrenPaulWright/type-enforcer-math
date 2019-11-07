@@ -49,7 +49,7 @@ const _ = new PrivateVars();
  * Vector model with helper types
  *
  * ``` javascript
- * import { Vector } from 'type-enforcer-math-addon';
+ * import { Vector } from 'type-enforcer-math';
  * ```
  *
  * @class Vector

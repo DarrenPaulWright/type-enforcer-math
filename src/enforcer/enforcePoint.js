@@ -6,7 +6,7 @@ import Point from '../Point';
  *
  * @example
  * ``` javascript
- * import { enforce } from 'type-enforcer-math-addon';
+ * import { enforce } from 'type-enforcer-math';
  *
  * enforce.point(new Point(1, 2), new Point());
  * // => point 1,2

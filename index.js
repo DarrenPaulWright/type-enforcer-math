@@ -3,7 +3,7 @@
  * @summary
  *
  * ```
- * npm install type-enforcer-ui-addon
+ * npm install type-enforcer-math
  * ```
  * _Requires Babel 7.2+_
  */
@@ -24,6 +24,8 @@
  * #### Type Enforcing Methods
  * - [method](docs/method.md)
  */
+export * from 'type-enforcer';
+
 export { default as is } from './src/checks/is';
 export { default as isPoint } from './src/checks/isPoint';
 export { default as isVector } from './src/checks/isVector';
@@ -38,5 +40,3 @@ export { default as methodVector } from './src/methods/methodVector';
 
 export { default as Point } from './src/Point';
 export { default as Vector } from './src/Vector';
-
-import './src/addon';

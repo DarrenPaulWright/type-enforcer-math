@@ -5,7 +5,7 @@ import Vector from '../Vector';
  *
  * @example
  * ``` javascript
- * import { isVector } from 'type-enforcer-math-addon';
+ * import { isVector } from 'type-enforcer-math';
  *
  * isVector(new Vector());
  * // => true

@@ -15,24 +15,17 @@ const files = testRunnerConfig.getWallabyFiles(config, {
 });
 
 module.exports = function(wallaby) {
-	const webpackPostprocessor = wallabyWebpack();
-
 	return {
-		name: 'type-enforcer-math-addon',
+		name: 'type-enforcer-math',
 		files: files.files,
 		tests: files.tests,
 		testFramework: 'mocha',
-		env: {
-			kind: 'chrome'
-		},
-		postprocessor: webpackPostprocessor,
-		compilers: {
-			'**/*.js': wallaby.compilers.babel()
-		},
+		env: {kind: 'chrome'},
+		postprocessor: wallabyWebpack(),
+		compilers: {'**/*.js': wallaby.compilers.babel()},
 		setup() {
 			window.__moduleBundler.loadTests();
 		},
-		// debug: true,
-		lowCoverageThreshold: 99
+		lowCoverageThreshold: 100
 	};
 };

@@ -6,7 +6,7 @@ import Vector from '../Vector';
  *
  * @example
  * ``` javascript
- * import { enforce } from 'type-enforcer-math-addon';
+ * import { enforce } from 'type-enforcer-math';
  *
  * enforce.vector(new Vector('[[1,2],[3,4]]'), new Vector());
  * // => vector of '[[1,2],[3,4]]'

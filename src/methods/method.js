@@ -1,3 +1,4 @@
+import { method } from 'type-enforcer';
 import methodPoint from './methodPoint';
 import methodVector from './methodVector';
 
@@ -5,10 +6,10 @@ import methodVector from './methodVector';
  * Enforce data types and remove common boilerplate code on class methods.
  *
  * ``` javascript
- * import { method } from 'type-enforcer-math-addon';
+ * import { method } from 'type-enforcer-math';
  *
  * // Or import individual functions
- * import { methodBoolean, methodString } from 'type-enforcer-math-addon';
+ * import { methodBoolean, methodString } from 'type-enforcer-math';
  * ```
  *
  * @example
@@ -34,6 +35,7 @@ import methodVector from './methodVector';
  * @typedef {object} method
  */
 export default {
+	...method,
 	point: methodPoint,
 	vector: methodVector
 };

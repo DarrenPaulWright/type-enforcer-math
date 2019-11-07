@@ -1,6 +1,6 @@
-# Type Enforcer Math Addon
+# Type Enforcer Math
 
-> An addon for type-enforcer with Math related data types and enforcer functions
+> An extension of type-enforcer with Math related data types and enforcer functions
 >
 > [![npm][npm]][npm-url]
 [![build][build]][build-url]
@@ -43,7 +43,7 @@
 | [y] | <code>Number</code> | <code>0</code> | 
 
 **Example**  
-``` javascriptimport { Point } from 'type-enforcer-math-addon';const point1 = new Point();console.log(point1.toString());// => '0,0'const point2 = new Point({x:1, y:2});console.log(point2.toString());// => '1,2'const point3 = new Point([3, 4]);console.log(point3.toString());// => '3,4'const point4 = new Point(5, 6);console.log(point4.toString());// => '5,6'console.log(point4.x);// => 5console.log(point4.y);// => 6```
+``` javascriptimport { Point } from 'type-enforcer-math';const point1 = new Point();console.log(point1.toString());// => '0,0'const point2 = new Point({x:1, y:2});console.log(point2.toString());// => '1,2'const point3 = new Point([3, 4]);console.log(point3.toString());// => '3,4'const point4 = new Point(5, 6);console.log(point4.toString());// => '5,6'console.log(point4.x);// => 5console.log(point4.y);// => 6```
 
 <br><a name="Point+set"></a>
 
@@ -142,17 +142,17 @@
 | value | <code>\*</code> | 
 
 
-[npm]: https://img.shields.io/npm/v/type-enforcer-math-addon.svg
-[npm-url]: https://npmjs.com/package/type-enforcer-math-addon
-[build]: https://travis-ci.org/DarrenPaulWright/type-enforcer-math-addon.svg?branch&#x3D;master
-[build-url]: https://travis-ci.org/DarrenPaulWright/type-enforcer-math-addon
-[coverage]: https://coveralls.io/repos/github/DarrenPaulWright/type-enforcer-math-addon/badge.svg?branch&#x3D;master
-[coverage-url]: https://coveralls.io/github/DarrenPaulWright/type-enforcer-math-addon?branch&#x3D;master
-[deps]: https://david-dm.org/darrenpaulwright/type-enforcer-math-addon.svg
-[deps-url]: https://david-dm.org/darrenpaulwright/type-enforcer-math-addon
-[size]: https://packagephobia.now.sh/badge?p&#x3D;type-enforcer-math-addon
-[size-url]: https://packagephobia.now.sh/result?p&#x3D;type-enforcer-math-addon
-[vulnerabilities]: https://snyk.io/test/github/DarrenPaulWright/type-enforcer-math-addon/badge.svg?targetFile&#x3D;package.json
-[vulnerabilities-url]: https://snyk.io/test/github/DarrenPaulWright/type-enforcer-math-addon?targetFile&#x3D;package.json
-[license]: https://img.shields.io/github/license/DarrenPaulWright/type-enforcer-math-addon.svg
-[license-url]: https://npmjs.com/package/type-enforcer-math-addon/LICENSE.md
+[npm]: https://img.shields.io/npm/v/type-enforcer-math.svg
+[npm-url]: https://npmjs.com/package/type-enforcer-math
+[build]: https://travis-ci.org/DarrenPaulWright/type-enforcer-math.svg?branch&#x3D;master
+[build-url]: https://travis-ci.org/DarrenPaulWright/type-enforcer-math
+[coverage]: https://coveralls.io/repos/github/DarrenPaulWright/type-enforcer-math/badge.svg?branch&#x3D;master
+[coverage-url]: https://coveralls.io/github/DarrenPaulWright/type-enforcer-math?branch&#x3D;master
+[deps]: https://david-dm.org/darrenpaulwright/type-enforcer-math.svg
+[deps-url]: https://david-dm.org/darrenpaulwright/type-enforcer-math
+[size]: https://packagephobia.now.sh/badge?p&#x3D;type-enforcer-math
+[size-url]: https://packagephobia.now.sh/result?p&#x3D;type-enforcer-math
+[vulnerabilities]: https://snyk.io/test/github/DarrenPaulWright/type-enforcer-math/badge.svg?targetFile&#x3D;package.json
+[vulnerabilities-url]: https://snyk.io/test/github/DarrenPaulWright/type-enforcer-math?targetFile&#x3D;package.json
+[license]: https://img.shields.io/github/license/DarrenPaulWright/type-enforcer-math.svg
+[license-url]: https://npmjs.com/package/type-enforcer-math/LICENSE.md
