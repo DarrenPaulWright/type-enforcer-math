@@ -16,30 +16,30 @@
 ### Vector
 
 * [Vector](#Vector)
-    * [new Vector([start], [end])](#new_Vector_new)
+    * [new Vector([args])](#new_Vector_new)
     * _instance_
         * [.isSame(vector2)](#Vector+isSame) ⇒ <code>Boolean</code>
         * [.invert()](#Vector+invert)
         * [.toString()](#Vector+toString)
-        * [.start([point])](#Vector+start) ⇒ <code>this</code> \| <code>Point</code>
-        * [.end([point])](#Vector+end) ⇒ <code>this</code> \| <code>Point</code>
-        * [.length([length])](#Vector+length) ⇒ <code>this</code> \| <code>Number</code>
-        * [.angle([angle])](#Vector+angle) ⇒ <code>this</code> \| <code>Number</code>
-        * [.offset([point])](#Vector+offset) ⇒ <code>this</code> \| <code>Point</code>
+        * [.valueOf()](#Vector+valueOf)
+        * [.start([point])](#Vector+start) ⇒ <code>Point</code>
+        * [.end([point])](#Vector+end) ⇒ <code>Point</code>
+        * [.length([length])](#Vector+length) ⇒ <code>Number</code>
+        * [.angle([angle])](#Vector+angle) ⇒ <code>Number</code>
+        * [.offset([point])](#Vector+offset) ⇒ <code>Point</code>
     * _static_
         * [.isValid(value)](#Vector.isValid) ⇒ <code>boolean</code>
 
 
 <br><a name="new_Vector_new"></a>
 
-#### new Vector([start], [end])
-> Vector model with helper types> > ``` javascript> import { Vector } from 'type-enforcer-math';> ```
+#### new Vector([args])
+> A Euclidean Vector model.> > ``` javascript> import { Vector } from 'type-enforcer-math';> ```
 
 
-| Param | Type |
-| --- | --- |
-| [start] | <code>Point</code> | 
-| [end] | <code>Point</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| [args] | <code>\*</code> | Accepts: <br>- A start and end point (or values that can be coerced into points) <br>- An array of two points (or values that can be coerced into points) <br>- Another vector instance <br>- A single start point (or value that can be coerced into a point) |
 
 
 <br><a name="Vector+isSame"></a>
@@ -62,12 +62,19 @@
 <br><a name="Vector+toString"></a>
 
 #### vector.toString()
-> Get a string representation of the vector
+> Get a string representation of the value of the vector
+
+
+<br><a name="Vector+valueOf"></a>
+
+#### vector.valueOf()
+> Returns an array with the values of the start and end points
 
 
 <br><a name="Vector+start"></a>
 
-#### vector.start([point]) ⇒ <code>this</code> \| <code>Point</code>
+#### vector.start([point]) ⇒ <code>Point</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
+
 > The start point
 
 
@@ -78,7 +85,8 @@
 
 <br><a name="Vector+end"></a>
 
-#### vector.end([point]) ⇒ <code>this</code> \| <code>Point</code>
+#### vector.end([point]) ⇒ <code>Point</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
+
 > The end point
 
 
@@ -89,8 +97,9 @@
 
 <br><a name="Vector+length"></a>
 
-#### vector.length([length]) ⇒ <code>this</code> \| <code>Number</code>
-> The length of the vector. Resets the end point.
+#### vector.length([length]) ⇒ <code>Number</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
+
+> The length (magnitude) of the vector. Resets the end point.
 
 
 | Param | Type |
@@ -100,7 +109,8 @@
 
 <br><a name="Vector+angle"></a>
 
-#### vector.angle([angle]) ⇒ <code>this</code> \| <code>Number</code>
+#### vector.angle([angle]) ⇒ <code>Number</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
+
 > The angle from the start point to the end point. Resets the end point
 
 
@@ -111,7 +121,8 @@
 
 <br><a name="Vector+offset"></a>
 
-#### vector.offset([point]) ⇒ <code>this</code> \| <code>Point</code>
+#### vector.offset([point]) ⇒ <code>Point</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
+
 > The x and y difference represented as a point
 
 
@@ -123,7 +134,7 @@
 <br><a name="Vector.isValid"></a>
 
 #### Vector.isValid(value) ⇒ <code>boolean</code>
-> Determine if something is a valid Vector
+> Determine if a value is a Vector or can be coerced into a vector
 
 
 | Param | Type |

@@ -1,3 +1,4 @@
+import { enforceObject } from 'type-enforcer';
 import isVector from '../checks/isVector';
 import Vector from '../Vector';
 
@@ -27,9 +28,4 @@ import Vector from '../Vector';
  *
  * @returns {Vector}
  */
-export default (value, alt, coerce) => {
-	if (coerce === true && !isVector(value) && isVector(value, true)) {
-		return new Vector(value);
-	}
-	return isVector(value) ? value : alt;
-};
+export default enforceObject.extend(isVector, (value) => new Vector(value));

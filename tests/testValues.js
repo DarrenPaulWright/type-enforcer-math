@@ -28,9 +28,11 @@ export const vectorData = {
 	name: 'vector',
 	true: validVectors,
 	false: difference(testValues, validVectors),
-	coerceTrue: ['[[1,2],[3,4]]'],
-	coerceFalse: [].concat(difference(testValues, validVectors), ['[[1,2],[3,4],[5,6]]', '[[1,2,7],[3,4,8]]'])
+	coerceTrue: ['[[1,2],[3,4]]', [[1, 2], [3, 4]]],
+	coerceFalse: difference(testValues, validVectors)
+		.concat(['[[1,2],[3,4],[5,6]]', '[[1,2,7],[3,4,8]]', [[1, 2], [3, 4], [5, 6]], [[1, 2, 7], [3, 4, 8]]])
 };
 
-testTypes.push(pointData);
-testTypes.push(vectorData);
+export const localTestTypes = [pointData, vectorData];
+
+localTestTypes.forEach((type) => testTypes.push(type));

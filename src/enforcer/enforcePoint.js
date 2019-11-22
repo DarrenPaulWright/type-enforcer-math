@@ -1,3 +1,4 @@
+import { enforceObject } from 'type-enforcer';
 import isPoint from '../checks/isPoint';
 import Point from '../Point';
 
@@ -27,9 +28,4 @@ import Point from '../Point';
  *
  * @returns {Point}
  */
-export default (value, alt, coerce) => {
-	if (coerce === true && !isPoint(value) && isPoint(value, true)) {
-		return new Point(value);
-	}
-	return isPoint(value) ? value : alt;
-};
+export default enforceObject.extend(isPoint, (value) => new Point(value));

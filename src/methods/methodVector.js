@@ -1,7 +1,6 @@
-import { methodAny, sameValueZero } from 'type-enforcer';
-import isVector from '../checks/isVector';
 import enforceVector from '../enforcer/enforceVector';
 import Vector from '../Vector';
+import methodPoint from './methodPoint';
 
 /**
  * Builds a chainable method for getting/setting a [Vector](docs/Vector.md)
@@ -18,20 +17,9 @@ import Vector from '../Vector';
  *
  * @returns {Function}
  */
-export default methodAny.extend({
+export default methodPoint.extend({
 	init: new Vector(),
-	enforce: (newValue, oldValue, options) => {
+	enforce(newValue, oldValue, options) {
 		return enforceVector(newValue, oldValue, options.coerce);
-	},
-	compare: (newValue, oldValue) => {
-		if (isVector(oldValue)) {
-			return !oldValue.isSame(newValue);
-		}
-		if (isVector(newValue)) {
-			return !newValue.isSame(oldValue);
-		}
-
-		return !sameValueZero(newValue, oldValue);
-	},
-	coerce: true
+	}
 });

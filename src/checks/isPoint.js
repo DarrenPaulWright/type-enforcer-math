@@ -1,5 +1,15 @@
 import Point from '../Point';
 
+const customTypeCheck = (Type) => {
+	const check = (value, coerce) => {
+		return value instanceof Type || (coerce === true && Type.isValid(value));
+	};
+
+	check.extend = customTypeCheck;
+
+	return check;
+};
+
 /**
  * Check if a value is a [Point](docs/Point.md)
  *
@@ -25,6 +35,4 @@ import Point from '../Point';
  *
  * @returns {Boolean}
  */
-export default (value, coerce) => {
-	return (value instanceof Point) || (coerce === true && Point.isValid(value));
-};
+export default customTypeCheck(Point);

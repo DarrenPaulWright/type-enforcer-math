@@ -29,6 +29,7 @@
         * [.clone()](#Point+clone) ⇒ <code>Boolean</code>
     * _static_
         * [.isValid(value)](#Point.isValid) ⇒ <code>boolean</code>
+        * [.normalizeAngle(angle)](#Point.normalizeAngle) ⇒ <code>Number</code>
 
 
 <br><a name="new_Point_new"></a>
@@ -140,6 +141,18 @@
 | Param | Type |
 | --- | --- |
 | value | <code>\*</code> | 
+
+
+<br><a name="Point.normalizeAngle"></a>
+
+#### Point.normalizeAngle(angle) ⇒ <code>Number</code>
+> Returns the same angle between 0 and 2 * PI
+
+**Returns**: <code>Number</code> - - The normalized angle  
+
+| Param | Type |
+| --- | --- |
+| angle | <code>Number</code> | 
 
 
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg

@@ -1,5 +1,4 @@
 import { methodAny, sameValueZero } from 'type-enforcer';
-import isPoint from '../checks/isPoint';
 import enforcePoint from '../enforcer/enforcePoint';
 import Point from '../Point';
 
@@ -20,18 +19,13 @@ import Point from '../Point';
  */
 export default methodAny.extend({
 	init: new Point(),
-	enforce: (newValue, oldValue, options) => {
+	enforce(newValue, oldValue, options) {
 		return enforcePoint(newValue, oldValue, options.coerce);
 	},
-	compare: (newValue, oldValue) => {
-		if (isPoint(oldValue)) {
-			return !oldValue.isSame(newValue);
-		}
-		if (isPoint(newValue)) {
-			return !newValue.isSame(oldValue);
-		}
-
-		return !sameValueZero(newValue, oldValue);
+	compare(newValue, oldValue) {
+		return oldValue && oldValue.isSame ? !oldValue.isSame(newValue) :
+			newValue && newValue.isSame ? !newValue.isSame(oldValue) :
+				!sameValueZero(newValue, oldValue);
 	},
 	coerce: true
 });

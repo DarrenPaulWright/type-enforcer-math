@@ -1,52 +1,12 @@
-import { enforceNumber, isArray, isJson, methodNumber, PrivateVars } from 'type-enforcer';
+import { enforceNumber, isArray, isString, methodNumber, PrivateVars } from 'type-enforcer';
+import enforcePoint from './enforcer/enforcePoint';
 import methodPoint from './methods/methodPoint';
 import Point from './Point';
-import angle from './utility/angle';
-
-const calculateLength = function() {
-	const _self = _(this);
-
-	if (!_self.isBusy) {
-		_self.isBusy = true;
-
-		this.offset(this.end().subtract(this.start()));
-		this.length(this.offset().distance());
-		this.angle(this.offset().angle());
-
-		_self.isBusy = false;
-	}
-};
-
-const setDestinationFromAngle = function() {
-	const _self = _(this);
-
-	if (!_self.isBusy) {
-		_self.isBusy = true;
-
-		this.end(this.start().pointAtDistance(this.angle(), this.length()))
-			.offset(this.end().subtract(this.start()));
-
-		_self.isBusy = false;
-	}
-};
-
-const setEndFromOffset = function() {
-	const _self = _(this);
-
-	if (!_self.isBusy) {
-		_self.isBusy = true;
-
-		this.end(this.start().add(this.offset()))
-			.length(this.offset().distance());
-
-		_self.isBusy = false;
-	}
-};
 
 const _ = new PrivateVars();
 
 /**
- * Vector model with helper types
+ * A Euclidean Vector model.
  *
  * ``` javascript
  * import { Vector } from 'type-enforcer-math';
@@ -54,30 +14,39 @@ const _ = new PrivateVars();
  *
  * @class Vector
  *
- * @arg {Point} [start]
- * @arg {Point} [end]
+ * @arg {*} [args] - Accepts:
+ * <br>- A start and end point (or values that can be coerced into points)
+ * <br>- An array of two points (or values that can be coerced into points)
+ * <br>- Another vector instance
+ * <br>- A single start point (or value that can be coerced into a point)
  */
 export default class Vector {
 	constructor(start, end) {
-		const _self = _.set(this, {
-			isBusy: true
-		});
-		if (start && !end) {
-			if (Vector.isValid(start)) {
-				start = JSON.parse(start);
-				end = start[1];
-				start = start[0];
-			}
+		if (start instanceof Vector) {
+			_.set(this, Object.assign({}, _(start)));
 		}
-		this.start(start);
-		this.end(end);
-		_self.isBusy = false;
-
-		calculateLength.call(this);
+		else if (end === undefined && isString(start)) {
+			_.set(this, {
+				start: enforcePoint(start.slice(2, start.indexOf(']')), new Point(), true),
+				end: enforcePoint(start.slice(start.indexOf(']') + 3, -2), new Point(), true)
+			});
+		}
+		else if (end === undefined && isArray(start) && !Point.isValid(start)) {
+			_.set(this, {
+				start: enforcePoint(start[0], new Point(), true),
+				end: enforcePoint(start[1], new Point(), true)
+			});
+		}
+		else {
+			_.set(this, {
+				start: enforcePoint(start, new Point(), true),
+				end: enforcePoint(end, new Point(), true)
+			});
+		}
 	}
 
 	/**
-	 * Determine if something is a valid Vector
+	 * Determine if a value is a Vector or can be coerced into a vector
 	 *
 	 * @memberOf Vector
 	 *
@@ -86,16 +55,9 @@ export default class Vector {
 	 * @returns {boolean}
 	 */
 	static isValid(value) {
-		if (value instanceof Vector) {
-			return true;
-		}
-		if (!isJson(value)) {
-			return false;
-		}
-
-		value = JSON.parse(value);
-
-		return (isArray(value) && value.length === 2 && Point.isValid(value[0]) && Point.isValid(value[1]));
+		return value instanceof Vector ||
+			isString(value) && Point.isValid(value.slice(2, value.indexOf(']'))) && Point.isValid(value.slice(value.indexOf(']') + 3, -2)) ||
+			isArray(value) && value.length === 2 && Point.isValid(value[0]) && Point.isValid(value[1]);
 	}
 
 	/**
@@ -109,10 +71,9 @@ export default class Vector {
 	 * @returns {Boolean}
 	 */
 	isSame(vector2) {
-		if (!(vector2 instanceof Vector)) {
-			return false;
-		}
-		return vector2.start().isSame(this.start()) && vector2.end().isSame(this.end());
+		return vector2 instanceof Vector &&
+			_(vector2).start.isSame(_(this).start) &&
+			_(vector2).end.isSame(_(this).end);
 	}
 
 	/**
@@ -122,23 +83,31 @@ export default class Vector {
 	 * @instance
 	 */
 	invert() {
-		let tempOrigin = this.start();
-
-		this.start(this.end());
-		this.end(tempOrigin);
-		tempOrigin = null;
+		[_(this).start, _(this).end] = [_(this).end, _(this).start];
+		_(this).angle = null;
+		_(this).offset = null;
 
 		return this;
 	}
 
 	/**
-	 * Get a string representation of the vector
+	 * Get a string representation of the value of the vector
 	 *
 	 * @memberOf Vector
 	 * @instance
 	 */
 	toString() {
-		return '[[' + this.start().toString() + '],[' + this.end().toString() + ']]';
+		return '[[' + _(this).start.toString() + '],[' + _(this).end.toString() + ']]';
+	}
+
+	/**
+	 * Returns an array with the values of the start and end points
+	 *
+	 * @memberOf Vector
+	 * @instance
+	 */
+	valueOf() {
+		return [_(this).start.valueOf(), _(this).end.valueOf()];
 	}
 }
 
@@ -149,13 +118,22 @@ Object.assign(Vector.prototype, {
 	 * @method
 	 * @memberOf Vector
 	 * @instance
+	 * @chainable
 	 *
 	 * @arg {Point} [point]
 	 *
-	 * @returns {this|Point}
+	 * @returns {Point}
 	 */
 	start: methodPoint({
-		set: calculateLength
+		set(start) {
+			_(this).start = start;
+			_(this).angle = null;
+			_(this).length = null;
+			_(this).offset = null;
+		},
+		get() {
+			return _(this).start;
+		}
 	}),
 	/**
 	 * The end point
@@ -163,27 +141,43 @@ Object.assign(Vector.prototype, {
 	 * @method
 	 * @memberOf Vector
 	 * @instance
+	 * @chainable
 	 *
 	 * @arg {Point} [point]
 	 *
-	 * @returns {this|Point}
+	 * @returns {Point}
 	 */
 	end: methodPoint({
-		set: calculateLength
+		set(end) {
+			_(this).end = end;
+			_(this).angle = null;
+			_(this).length = null;
+			_(this).offset = null;
+		},
+		get() {
+			return _(this).end;
+		}
 	}),
 	/**
-	 * The length of the vector. Resets the end point.
+	 * The length (magnitude) of the vector. Resets the end point.
 	 *
 	 * @method
 	 * @memberOf Vector
 	 * @instance
+	 * @chainable
 	 *
 	 * @arg {Number} [length]
 	 *
-	 * @returns {this|Number}
+	 * @returns {Number}
 	 */
 	length: methodNumber({
-		set: setDestinationFromAngle
+		set(length) {
+			_(this).end = _(this).start.pointAtDistance(this.angle(), _(this).length = length);
+			_(this).offset = null;
+		},
+		get() {
+			return _(this).length || (_(this).length = _(this).end.subtract(_(this).start).distance());
+		}
 	}),
 	/**
 	 * The angle from the start point to the end point. Resets the end point
@@ -191,16 +185,23 @@ Object.assign(Vector.prototype, {
 	 * @method
 	 * @memberOf Vector
 	 * @instance
+	 * @chainable
 	 *
 	 * @arg {Number} [angle]
 	 *
-	 * @returns {this|Number}
+	 * @returns {Number}
 	 */
 	angle: methodNumber({
 		enforce(newValue, oldValue) {
-			return angle.normalize(enforceNumber(newValue, oldValue));
+			return Point.normalizeAngle(enforceNumber(newValue, oldValue));
 		},
-		set: setDestinationFromAngle
+		set(angle) {
+			_(this).end = _(this).start.pointAtDistance(_(this).angle = angle, this.length());
+			_(this).offset = null;
+		},
+		get() {
+			return _(this).angle || (_(this).angle = _(this).end.subtract(_(this).start).angle());
+		}
 	}),
 	/**
 	 * The x and y difference represented as a point
@@ -208,12 +209,23 @@ Object.assign(Vector.prototype, {
 	 * @method
 	 * @memberOf Vector
 	 * @instance
+	 * @chainable
 	 *
 	 * @arg {Point} [point]
 	 *
-	 * @returns {this|Point}
+	 * @returns {Point}
 	 */
 	offset: methodPoint({
-		set: setEndFromOffset
+		set(offset) {
+			Object.assign(_(this), {
+				offset,
+				end: _(this).start.add(offset),
+				angle: null,
+				length: null
+			});
+		},
+		get() {
+			return _(this).offset || (_(this).offset = _(this).end.subtract(_(this).start));
+		}
 	})
 });

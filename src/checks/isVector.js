@@ -1,4 +1,5 @@
 import Vector from '../Vector';
+import isPoint from './isPoint';
 
 /**
  * Check if a value is a [Vector](docs/Vector.md)
@@ -25,6 +26,4 @@ import Vector from '../Vector';
  *
  * @returns {Boolean}
  */
-export default (value, coerce) => {
-	return (value instanceof Vector) || (coerce === true && Vector.isValid(value));
-};
+export default isPoint.extend(Vector);

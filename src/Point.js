@@ -1,7 +1,8 @@
-import { isArray, isNumber, isString } from 'type-enforcer';
-import angle from './utility/angle';
+import { enforceNumber, isArray, isFloat, isString } from 'type-enforcer';
 
 const SEPARATOR = ',';
+const TWO_PI = 2 * Math.PI;
+const validify = (x, y) => isFloat(x, true) && isFloat(y, true);
 
 /**
  * Point model with helper methods
@@ -39,9 +40,6 @@ const SEPARATOR = ',';
 export default class Point {
 	constructor(x, y) {
 		this.set(x, y);
-
-		x = null;
-		y = null;
 	}
 
 	/**
@@ -54,16 +52,27 @@ export default class Point {
 	 * @returns {boolean}
 	 */
 	static isValid(value) {
-		if (value instanceof Point) {
-			return true;
-		}
-		if (isString(value)) {
-			value = value.split(SEPARATOR).map(parseFloat);
-		}
-		if (isArray(value)) {
-			return value.length === 2 && isNumber(value[0], true) && isNumber(value[1], true);
-		}
-		return !!value && isNumber(value.x, true) && isNumber(value.y, true);
+		return value instanceof Point ||
+			(isString(value) &&
+				value.indexOf(SEPARATOR) !== -1 &&
+				validify(value.slice(value.indexOf(SEPARATOR) + 1), value.slice(0, value.indexOf(SEPARATOR)))) ||
+			(isArray(value) &&
+				value.length === 2 &&
+				validify(value[0], value[1])) ||
+			Boolean(value) && validify(value.x, value.y);
+	}
+
+	/**
+	 * Returns the same angle between 0 and 2 * PI
+	 *
+	 * @memberOf Point
+	 *
+	 * @arg {Number} angle
+	 *
+	 * @returns {Number} - The normalized angle
+	 */
+	static normalizeAngle(angle) {
+		return angle % TWO_PI + (angle < 0 ? TWO_PI : 0);
 	}
 
 	/**
@@ -78,22 +87,23 @@ export default class Point {
 	 * @returns {this}
 	 */
 	set(x, y) {
-		if (isString(x) && !y) {
-			x = x.split(SEPARATOR);
+		if (y === undefined && x !== undefined) {
+			if (isString(x)) {
+				y = x.slice(x.indexOf(SEPARATOR) + 1);
+				x = x.slice(0, x.indexOf(SEPARATOR));
+			}
+			else if (isArray(x)) {
+				y = x[1];
+				x = x[0];
+			}
+			else if ('x' in x) {
+				y = x.y;
+				x = x.x;
+			}
 		}
-		if (isArray(x)) {
-			y = x[1];
-			x = x[0];
-		}
-		else if (x && x.x) {
-			y = x.y;
-			x = x.x;
-		}
-		this.x = parseFloat(x) || 0;
-		this.y = parseFloat(y) || 0;
 
-		x = null;
-		y = null;
+		this.x = enforceNumber(x, 0, true);
+		this.y = enforceNumber(y, 0, true);
 
 		return this;
 	}
@@ -112,6 +122,10 @@ export default class Point {
 		return this.x + suffix + SEPARATOR + this.y + suffix;
 	}
 
+	valueOf() {
+		return [this.x, this.y];
+	}
+
 	/**
 	 * Determine if another point is the same as this one
 	 *
@@ -123,13 +137,9 @@ export default class Point {
 	 * @returns {Boolean}
 	 */
 	isSame(point2) {
-		if (!point2) {
-			return false;
-		}
-		if (!(point2 instanceof Point)) {
-			return new Point(point2).toString() === this.toString();
-		}
-		return (this.x === point2.x && this.y === point2.y);
+		return point2 instanceof Point ?
+			this.x === point2.x && this.y === point2.y :
+			point2 !== undefined && this.isSame(new Point(point2));
 	}
 
 	/**
@@ -169,7 +179,7 @@ export default class Point {
 	 * @returns {Number}
 	 */
 	distance() {
-		return Math.sqrt(this.x * this.x + this.y * this.y);
+		return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
 	}
 
 	/**
@@ -181,7 +191,7 @@ export default class Point {
 	 * @returns {Boolean}
 	 */
 	angle() {
-		return angle.fromOrigin(this);
+		return Point.normalizeAngle(Math.atan2(this.y, this.x));
 	}
 
 	/**

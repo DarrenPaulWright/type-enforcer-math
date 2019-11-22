@@ -41,28 +41,44 @@ describe('Vector', () => {
 			assert.deepEqual(vector.end(), new Point(5, 4));
 		});
 
+		it('should accept an array', () => {
+			const vector = new Vector([[1, 2], [3, 4]]);
+
+			assert.deepEqual(vector.end(), new Point(3, 4));
+		});
+
 		it('should accept a valid string', () => {
 			const vector = new Vector('[[1,2],[3,4]]');
 
 			assert.deepEqual(vector.end(), new Point(3, 4));
 		});
 
-		it('should set the length when instantiated', () => {
-			const vector = new Vector([1, 2], [1, 4]);
+		it('should accept another vector', () => {
+			const vector = new Vector(new Vector('[[1,2],[3,4]]'));
 
-			assert.equal(vector.length(), 2);
+			assert.deepEqual(vector.end(), new Point(3, 4));
+		});
+	});
+
+	describe('.isValid', () => {
+		const testCallback = (value) => Vector.isValid(value);
+
+		multiTest({
+			values: vectorData.true,
+			test: testCallback,
+			assertion: 'isTrue'
 		});
 
-		it('should set the angle when instantiated', () => {
-			const vector = new Vector([1, 1], [2, 2]);
-
-			assert.equal(vector.angle(), Math.PI / 4);
+		multiTest({
+			values: vectorData.coerceTrue,
+			test: testCallback,
+			assertion: 'isTrue'
 		});
 
-		it('should set the offset when instantiated', () => {
-			const vector = new Vector([1, 1], [3, 5]);
-
-			assert.deepEqual(vector.offset(), new Point(2, 4));
+		multiTest({
+			values: vectorData.coerceFalse,
+			test: testCallback,
+			assertion: 'isFalse'
 		});
 	});
 
@@ -89,6 +105,8 @@ describe('Vector', () => {
 		it('should set the length when start is set', () => {
 			const vector = new Vector([1, 1], [2, 2]);
 
+			assert.deepEqual(vector.length(), Math.sqrt(2));
+
 			vector.start(new Point(5, 6));
 
 			assert.deepEqual(vector.length(), 5);
@@ -97,6 +115,8 @@ describe('Vector', () => {
 		it('should set the angle when start is set', () => {
 			const vector = new Vector([1, 1], [2, 2]);
 
+			assert.deepEqual(vector.angle(), Math.PI / 4);
+
 			vector.start(new Point(3, 3));
 
 			assert.deepEqual(vector.angle(), Math.PI * 5 / 4);
@@ -104,6 +124,8 @@ describe('Vector', () => {
 
 		it('should set the offset when start is set', () => {
 			const vector = new Vector([1, 1], [3, 5]);
+
+			assert.deepEqual(vector.offset(), new Point(2, 4));
 
 			vector.start(new Point(3, -1));
 
@@ -134,6 +156,8 @@ describe('Vector', () => {
 		it('should set the length when end is set', () => {
 			const vector = new Vector([1, 1], [2, 2]);
 
+			assert.deepEqual(vector.length(), Math.sqrt(2));
+
 			vector.end(new Point(4, 5));
 
 			assert.deepEqual(vector.length(), 5);
@@ -142,6 +166,8 @@ describe('Vector', () => {
 		it('should set the angle when end is set', () => {
 			const vector = new Vector([1, 1], [2, 2]);
 
+			assert.deepEqual(vector.angle(), Math.PI / 4);
+
 			vector.end(new Point(3, -1));
 
 			assert.deepEqual(vector.angle(), Math.PI * 7 / 4);
@@ -149,6 +175,8 @@ describe('Vector', () => {
 
 		it('should set the offset when end is set', () => {
 			const vector = new Vector([1, 1], [3, 5]);
+
+			assert.deepEqual(vector.offset(), new Point(2, 4));
 
 			vector.end(new Point(3, -1));
 
@@ -169,6 +197,8 @@ describe('Vector', () => {
 		it('should set the angle when invert is called', () => {
 			const vector = new Vector([1, 1], [2, 2]);
 
+			assert.deepEqual(vector.angle(), Math.PI / 4);
+
 			vector.invert();
 
 			assert.deepEqual(vector.angle(), Math.PI * 5 / 4);
@@ -177,6 +207,8 @@ describe('Vector', () => {
 		it('should set the offset when invert is called', () => {
 			const vector = new Vector([1, 1], [3, 5]);
 
+			assert.deepEqual(vector.offset(), new Point(2, 4));
+
 			vector.invert();
 
 			assert.deepEqual(vector.offset(), new Point(-2, -4));
@@ -184,6 +216,12 @@ describe('Vector', () => {
 	});
 
 	describe('.length', () => {
+		it('should set the length when instantiated', () => {
+			const vector = new Vector([1, 2], [1, 4]);
+
+			assert.equal(vector.length(), 2);
+		});
+
 		it('should set the end when length is set', () => {
 			const vector = new Vector([1, 1], [5, 1]);
 
@@ -195,6 +233,8 @@ describe('Vector', () => {
 		it('should set the offset when angle is set', () => {
 			const vector = new Vector([1, 1], [5, 1]);
 
+			assert.deepEqual(vector.offset(), new Point(4, 0));
+
 			vector.length(2);
 
 			assert.deepEqual(vector.offset(), new Point(2, 0));
@@ -202,6 +242,12 @@ describe('Vector', () => {
 	});
 
 	describe('.angle', () => {
+		it('should set the angle when instantiated', () => {
+			const vector = new Vector([1, 1], [2, 2]);
+
+			assert.equal(vector.angle(), Math.PI / 4);
+		});
+
 		it('should set the end when angle is set', () => {
 			const vector = new Vector([1, 1], [5, 1]);
 
@@ -212,6 +258,8 @@ describe('Vector', () => {
 
 		it('should set the offset when angle is set', () => {
 			const vector = new Vector([1, 1], [5, 1]);
+
+			assert.deepEqual(vector.offset(), new Point(4, 0));
 
 			vector.angle(Math.PI / 2);
 
@@ -236,6 +284,12 @@ describe('Vector', () => {
 	});
 
 	describe('.offset', () => {
+		it('should set the offset when instantiated', () => {
+			const vector = new Vector([1, 1], [3, 5]);
+
+			assert.deepEqual(vector.offset(), new Point(2, 4));
+		});
+
 		it('should accept an Array when offset is set', () => {
 			const vector = new Vector(new Point(1, 2), new Point(5, 4));
 
@@ -258,6 +312,8 @@ describe('Vector', () => {
 		it('should set the end when offset is set', () => {
 			const vector = new Vector([1, 1], [3, 5]);
 
+			assert.deepEqual(vector.end(), new Point(3, 5));
+
 			vector.offset(new Point(5, 6));
 
 			assert.deepEqual(vector.end(), new Point(6, 7));
@@ -266,9 +322,21 @@ describe('Vector', () => {
 		it('should set the length when offset is set', () => {
 			const vector = new Vector([1, 1], [3, 5]);
 
+			assert.deepEqual(vector.length(), Math.sqrt(20));
+
 			vector.offset(new Point(5, 6));
 
-			assert.deepEqual(vector.length(), Math.sqrt((61)));
+			assert.deepEqual(vector.length(), Math.sqrt(61));
+		});
+
+		it('should set the angle when offset is set', () => {
+			const vector = new Vector([1, 1], [1, 5]);
+
+			assert.equal(vector.angle(), Math.PI / 2);
+
+			vector.offset(new Point(5, 5));
+
+			assert.equal(vector.angle(), Math.PI / 4);
 		});
 	});
 
@@ -276,8 +344,19 @@ describe('Vector', () => {
 		it('should return a string of the vector', () => {
 			assert.equal(new Vector().toString(), '[[0,0],[0,0]]');
 		});
+
 		it('should return a string of the vector if custom', () => {
 			assert.equal(new Vector([1, 2], [3, 4]).toString(), '[[1,2],[3,4]]');
+		});
+	});
+
+	describe('.valueOf', () => {
+		it('should return a string of the vector', () => {
+			assert.deepEqual(new Vector().valueOf(), [[0, 0], [0, 0]]);
+		});
+		
+		it('should return a string of the vector if custom', () => {
+			assert.deepEqual(new Vector([1, 2], [3, 4]).valueOf(), [[1, 2], [3, 4]]);
 		});
 	});
 
@@ -290,28 +369,6 @@ describe('Vector', () => {
 		});
 		it('should return false if a different Vector', () => {
 			assert.isFalse(new Vector([1, 2], [3, 4]).isSame(new Vector([5, 2], [3, 4])));
-		});
-	});
-
-	describe('.isValid', () => {
-		const testCallback = (value) => Vector.isValid(value);
-
-		multiTest({
-			values: vectorData.true,
-			test: testCallback,
-			assertion: 'isTrue'
-		});
-
-		multiTest({
-			values: vectorData.coerceTrue,
-			test: testCallback,
-			assertion: 'isTrue'
-		});
-
-		multiTest({
-			values: vectorData.coerceFalse,
-			test: testCallback,
-			assertion: 'isFalse'
 		});
 	});
 });

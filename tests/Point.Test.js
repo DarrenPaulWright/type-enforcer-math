@@ -80,6 +80,32 @@ describe('Point', () => {
 		});
 	});
 
+	describe('.normalizeAngle', () => {
+		it('should change 2 * PI to 0', () => {
+			assert.equal(Point.normalizeAngle(Math.PI * 2), 0);
+		});
+
+		it('should change -2 * PI to 0', () => {
+			assert.equal(Point.normalizeAngle(-Math.PI * 2), Math.PI * 2);
+		});
+
+		it('should normalize the angle when greater than 2 * PI', () => {
+			assert.equal(Point.normalizeAngle(Math.PI * 2.5), Math.PI / 2);
+		});
+
+		it('should normalize the angle when multiple times greater than 2 * PI', () => {
+			assert.equal(Math.round(Point.normalizeAngle(Math.PI * 10.5) * 1000000), Math.round((Math.PI / 2) * 1000000));
+		});
+
+		it('should normalize the angle when less than 0', () => {
+			assert.equal(Point.normalizeAngle(-Math.PI * 5 / 2), Math.PI * 3 / 2);
+		});
+
+		it('should normalize the angle when multiple times less than 0', () => {
+			assert.equal(Math.round(Point.normalizeAngle(-Math.PI * 11) * 1000000), Math.round(Math.PI * 1000000));
+		});
+	});
+
 	describe('.toString', () => {
 		it('should output a string', () => {
 			const point = new Point([1, 2]);
@@ -155,9 +181,11 @@ describe('Point', () => {
 
 	describe('.angle', () => {
 		it('should return a Number with appropriate value', () => {
-			const point = new Point(0, 4);
+			assert.equal(new Point(0, 4).angle(), Math.PI / 2);
+		});
 
-			assert.equal(point.angle(), Math.PI / 2);
+		it('should return PI *3 / 2 when {x:0, y:-4} is passed in', () => {
+			assert.equal(new Point(0, -4).angle(), Math.PI * 3 / 2);
 		});
 	});
 
