@@ -3,6 +3,9 @@
 	"version": "1.0.0-beta.3",
 	"description": "An extension of type-enforcer with Math related data types and enforcer functions",
 	"main": "index.js",
+	"files": [
+		"/src"
+	],
 	"sideEffects": false,
 	"scripts": {
 		"test": "karma start --single-run",
@@ -54,9 +57,6 @@
 			"url": "https://npmjs.com/package/type-enforcer-math/LICENSE.md"
 		}
 	],
-	"files": [
-		"/src"
-	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/DarrenPaulWright/type-enforcer-math.git"
@@ -73,15 +73,15 @@
 	},
 	"homepage": "https://github.com/DarrenPaulWright/type-enforcer-math#readme",
 	"dependencies": {
-		"object-agent": "^1.4.0",
-		"type-enforcer": "^1.0.0-beta.3"
+		"object-agent": "^1.4.1",
+		"type-enforcer": "^1.0.0-beta.4"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.7.2",
-		"@babel/preset-env": "^7.7.1",
+		"@babel/core": "^7.7.4",
+		"@babel/preset-env": "^7.7.4",
 		"dmd-readable": "^1.0.0",
 		"jsdoc-to-markdown": "^5.0.3",
-		"karma-webpack-bundle": "^0.0.3",
+		"karma-webpack-bundle": "^0.0.4",
 		"npm-run-all": "^4.1.5",
 		"type-enforcer-test-helper": "^1.0.2",
 		"webpack": "^4.41.2"
