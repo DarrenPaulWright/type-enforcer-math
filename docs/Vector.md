@@ -34,7 +34,11 @@
 <br><a name="new_Vector_new"></a>
 
 #### new Vector([args])
-> A Euclidean Vector model.> > ``` javascript> import { Vector } from 'type-enforcer-math';> ```
+> A Euclidean Vector model.
+> 
+> ``` javascript
+> import { Vector } from 'type-enforcer-math';
+> ```
 
 
 | Param | Type | Description |

@@ -3,7 +3,7 @@ import enforcePoint from './enforcePoint';
 import enforceVector from './enforceVector';
 
 /**
- * Utility functions for enforcing data types.
+ * Utility functions for enforcing data types. Includes all the enforcers from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer), along with:
  *
  * ``` javascript
  * import { enforce } from 'type-enforcer-math';

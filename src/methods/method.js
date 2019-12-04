@@ -3,7 +3,7 @@ import methodPoint from './methodPoint';
 import methodVector from './methodVector';
 
 /**
- * Enforce data types and remove common boilerplate code on class methods.
+ * Enforce data types and remove common boilerplate code on class methods. Includes all the methods from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer), along with:
  *
  * ``` javascript
  * import { method } from 'type-enforcer-math';

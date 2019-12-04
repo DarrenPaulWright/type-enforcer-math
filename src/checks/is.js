@@ -3,7 +3,7 @@ import isPoint from './isPoint';
 import isVector from './isVector';
 
 /**
- * Utility functions for checking if something is a particular data type.
+ * Utility functions for checking if something is a particular data type. Includes all the checks from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer), along with:
  *
  * ``` javascript
  * import { is } from 'type-enforcer-math';

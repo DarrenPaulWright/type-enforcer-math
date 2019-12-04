@@ -14,12 +14,28 @@
 <br><a name="Installation"></a>
 
 ### Installation
-```npm install type-enforcer-math```_Requires Babel 7.2+_
+```
+npm install type-enforcer-math
+```
+_Requires Babel 7.2+_
 
 <br><a name="Docs"></a>
 
 ### Docs
-#### Extra Data Types- [Point](docs/Point.md)- [Vector](docs/Vector.md)#### Type Checks- [checks](docs/checks.md)#### Type Enforcement- [enforce](docs/enforce.md)#### Type Enforcing Methods- [method](docs/method.md)
+type-enforcer-math re-exports everything from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer), along with:
+
+#### Extra Data Types
+- [Point](docs/Point.md)
+- [Vector](docs/Vector.md)
+
+#### Type Checks
+- [checks](docs/checks.md)
+
+#### Type Enforcement
+- [enforce](docs/enforce.md)
+
+#### Type Enforcing Methods
+- [method](docs/method.md)
 
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg
 [npm-url]: https://npmjs.com/package/type-enforcer-math

@@ -11,6 +11,8 @@
 /**
  * @name Docs
  * @summary
+ * type-enforcer-math re-exports everything from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer), along with:
+ *
  * #### Extra Data Types
  * - [Point](docs/Point.md)
  * - [Vector](docs/Vector.md)
