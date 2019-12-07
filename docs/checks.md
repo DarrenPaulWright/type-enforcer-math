@@ -14,14 +14,7 @@
 <br><a name="is"></a>
 
 ### is : <code>object</code>
-> Utility functions for checking if something is a particular data type. Includes all the checks from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer), along with:
-> 
-> ``` javascript
-> import { is } from 'type-enforcer-math';
-> 
-> // Or import individual functions
-> import { isBoolean, isString } from 'type-enforcer-math';
-> ```
+> Utility functions for checking if something is a particular data type. Includes all the checks from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer), along with:> > ``` javascript> import { is } from 'type-enforcer-math';> > // Or import individual functions> import { isBoolean, isString } from 'type-enforcer-math';> ```
 
 
 * [is](#is) : <code>object</code>
@@ -43,18 +36,7 @@
 | [coerce] | <code>Boolean</code> | <code>false</code> | If true then see if the value can be coerced into a Point |
 
 **Example**  
-``` javascript
-import { isPoint } from 'type-enforcer-math';
-
-isPoint(new Point());
-// => true
-
-isPoint('1,2');
-// => false
-
-isPoint('1,2', true);
-// => true
-```
+``` javascriptimport { isPoint } from 'type-enforcer-math';isPoint(new Point());// => trueisPoint('1,2');// => falseisPoint('1,2', true);// => true```
 
 <br><a name="is.vector"></a>
 
@@ -70,18 +52,7 @@ isPoint('1,2', true);
 | [coerce] | <code>Boolean</code> | <code>false</code> | If true then see if the value can be coerced into a Vector |
 
 **Example**  
-``` javascript
-import { isVector } from 'type-enforcer-math';
-
-isVector(new Vector());
-// => true
-
-isVector('[[1,2],[3,4]]');
-// => false
-
-isVector('[[1,2],[3,4]]', true);
-// => true
-```
+``` javascriptimport { isVector } from 'type-enforcer-math';isVector(new Vector());// => trueisVector('[[1,2],[3,4]]');// => falseisVector('[[1,2],[3,4]]', true);// => true```
 
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg
 [npm-url]: https://npmjs.com/package/type-enforcer-math
