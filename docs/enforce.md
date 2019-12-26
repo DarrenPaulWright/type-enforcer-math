@@ -13,9 +13,11 @@
 
 <br><a name="enforce"></a>
 
-### enforce : <code>object</code>
-> Utility functions for enforcing data types. Includes all the enforcers from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer), along with:> > ``` javascript> import { enforce } from 'type-enforcer-math';> > // Or import individual functions> import { enforceBoolean, enforceString } from 'type-enforcer-math';> ```
+## enforce : <code>object</code>
+> Utility functions for enforcing data types. Includes all the enforcers from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer).
 
+**Example**  
+``` javascriptimport { enforce } from 'type-enforcer-math';// Or import individual functionsimport { enforceBoolean, enforceString } from 'type-enforcer-math';```
 
 * [enforce](#enforce) : <code>object</code>
     * [.point(value, alt, [coerce])](#enforce.point) ⇒ <code>Point</code>
@@ -24,7 +26,7 @@
 
 <br><a name="enforce.point"></a>
 
-#### enforce.point(value, alt, [coerce]) ⇒ <code>Point</code>
+### enforce.point(value, alt, [coerce]) ⇒ <code>Point</code>
 > Enforce that a value is a [Point](docs/Point.md). Uses [isPoint](docs/checks.md#isPoint).
 
 **Alias:** `enforcePoint`
@@ -41,7 +43,7 @@
 
 <br><a name="enforce.vector"></a>
 
-#### enforce.vector(value, alt, [coerce]) ⇒ <code>Vector</code>
+### enforce.vector(value, alt, [coerce]) ⇒ <code>Vector</code>
 > Enforce that a value is a [Vector](docs/Vector.md). Uses [isVector](docs/checks.md#isVector).
 
 **Alias:** `enforceVector`

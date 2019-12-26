@@ -3,17 +3,15 @@ import methodPoint from './methodPoint';
 import methodVector from './methodVector';
 
 /**
- * Enforce data types and remove common boilerplate code on class methods. Includes all the methods from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer), along with:
+ * Enforce data types and remove common boilerplate code on class methods. Includes all the methods from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer).
  *
+ * @example
  * ``` javascript
  * import { method } from 'type-enforcer-math';
  *
  * // Or import individual functions
  * import { methodBoolean, methodString } from 'type-enforcer-math';
- * ```
  *
- * @example
- * ``` javascript
  * // Use it as a prototype:
  * const Thing = function() {};
  *
@@ -32,7 +30,7 @@ import methodVector from './methodVector';
  * };
  * ```
  *
- * @typedef {object} method
+ * @namespace method
  */
 export default {
 	...method,

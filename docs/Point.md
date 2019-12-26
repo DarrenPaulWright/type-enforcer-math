@@ -13,7 +13,9 @@
 
 <br><a name="Point"></a>
 
-### Point
+## Point
+> Point model with helper methods
+
 
 * [Point](#Point)
     * [new Point([x], [y])](#new_Point_new)
@@ -34,9 +36,7 @@
 
 <br><a name="new_Point_new"></a>
 
-#### new Point([x], [y])
-> Point model with helper methods
-
+### new Point([x], [y])
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -48,7 +48,7 @@
 
 <br><a name="Point+set"></a>
 
-#### point.set(x, y) ⇒ <code>this</code>
+### point.set(x, y) ⇒ <code>this</code>
 > Set x and y
 
 
@@ -60,7 +60,7 @@
 
 <br><a name="Point+toString"></a>
 
-#### point.toString([suffix]) ⇒ <code>String</code>
+### point.toString([suffix]) ⇒ <code>String</code>
 > Get the point as a string with an optional suffix
 
 
@@ -71,7 +71,7 @@
 
 <br><a name="Point+isSame"></a>
 
-#### point.isSame(point2) ⇒ <code>Boolean</code>
+### point.isSame(point2) ⇒ <code>Boolean</code>
 > Determine if another point is the same as this one
 
 
@@ -82,7 +82,7 @@
 
 <br><a name="Point+add"></a>
 
-#### point.add(point2) ⇒ <code>Boolean</code>
+### point.add(point2) ⇒ <code>Boolean</code>
 > Adds the coordinates of another point to this one and returns a new point
 
 
@@ -93,7 +93,7 @@
 
 <br><a name="Point+subtract"></a>
 
-#### point.subtract(point2) ⇒ <code>Boolean</code>
+### point.subtract(point2) ⇒ <code>Boolean</code>
 > Subtracts the coordinates of another point from this one and returns a new point
 
 
@@ -104,19 +104,19 @@
 
 <br><a name="Point+distance"></a>
 
-#### point.distance() ⇒ <code>Number</code>
+### point.distance() ⇒ <code>Number</code>
 > Finds the distance from point to origin
 
 
 <br><a name="Point+angle"></a>
 
-#### point.angle() ⇒ <code>Boolean</code>
+### point.angle() ⇒ <code>Boolean</code>
 > Finds the angle to this point from origin
 
 
 <br><a name="Point+pointAtDistance"></a>
 
-#### point.pointAtDistance(angle, distance) ⇒ <code>Boolean</code>
+### point.pointAtDistance(angle, distance) ⇒ <code>Boolean</code>
 > Returns a new point at a specific angle and distance from this point
 
 
@@ -128,13 +128,13 @@
 
 <br><a name="Point+clone"></a>
 
-#### point.clone() ⇒ <code>Boolean</code>
+### point.clone() ⇒ <code>Boolean</code>
 > Get a clone of this point
 
 
 <br><a name="Point.isValid"></a>
 
-#### Point.isValid(value) ⇒ <code>boolean</code>
+### Point.isValid(value) ⇒ <code>boolean</code>
 > Determine if something is a valid point
 
 
@@ -145,7 +145,7 @@
 
 <br><a name="Point.normalizeAngle"></a>
 
-#### Point.normalizeAngle(angle) ⇒ <code>Number</code>
+### Point.normalizeAngle(angle) ⇒ <code>Number</code>
 > Returns the same angle between 0 and 2 * PI
 
 **Returns**: <code>Number</code> - - The normalized angle  

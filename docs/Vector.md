@@ -13,7 +13,9 @@
 
 <br><a name="Vector"></a>
 
-### Vector
+## Vector
+> A Euclidean Vector model.
+
 
 * [Vector](#Vector)
     * [new Vector([args])](#new_Vector_new)
@@ -33,18 +35,18 @@
 
 <br><a name="new_Vector_new"></a>
 
-#### new Vector([args])
-> A Euclidean Vector model.> > ``` javascript> import { Vector } from 'type-enforcer-math';> ```
-
+### new Vector([args])
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [args] | <code>\*</code> | Accepts: <br>- A start and end point (or values that can be coerced into points) <br>- An array of two points (or values that can be coerced into points) <br>- Another vector instance <br>- A single start point (or value that can be coerced into a point) |
 
+**Example**  
+``` javascriptimport { Vector } from 'type-enforcer-math';```
 
 <br><a name="Vector+isSame"></a>
 
-#### vector.isSame(vector2) ⇒ <code>Boolean</code>
+### vector.isSame(vector2) ⇒ <code>Boolean</code>
 > Determine if another vector is the same as this one
 
 
@@ -55,25 +57,25 @@
 
 <br><a name="Vector+invert"></a>
 
-#### vector.invert()
+### vector.invert()
 > Switch the start and end points
 
 
 <br><a name="Vector+toString"></a>
 
-#### vector.toString()
+### vector.toString()
 > Get a string representation of the value of the vector
 
 
 <br><a name="Vector+valueOf"></a>
 
-#### vector.valueOf()
+### vector.valueOf()
 > Returns an array with the values of the start and end points
 
 
 <br><a name="Vector+start"></a>
 
-#### vector.start([point]) ⇒ <code>Point</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
+### vector.start([point]) ⇒ <code>Point</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
 
 > The start point
 
@@ -85,7 +87,7 @@
 
 <br><a name="Vector+end"></a>
 
-#### vector.end([point]) ⇒ <code>Point</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
+### vector.end([point]) ⇒ <code>Point</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
 
 > The end point
 
@@ -97,7 +99,7 @@
 
 <br><a name="Vector+length"></a>
 
-#### vector.length([length]) ⇒ <code>Number</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
+### vector.length([length]) ⇒ <code>Number</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
 
 > The length (magnitude) of the vector. Resets the end point.
 
@@ -109,7 +111,7 @@
 
 <br><a name="Vector+angle"></a>
 
-#### vector.angle([angle]) ⇒ <code>Number</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
+### vector.angle([angle]) ⇒ <code>Number</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
 
 > The angle from the start point to the end point. Resets the end point
 
@@ -121,7 +123,7 @@
 
 <br><a name="Vector+offset"></a>
 
-#### vector.offset([point]) ⇒ <code>Point</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
+### vector.offset([point]) ⇒ <code>Point</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
 
 > The x and y difference represented as a point
 
@@ -133,7 +135,7 @@
 
 <br><a name="Vector.isValid"></a>
 
-#### Vector.isValid(value) ⇒ <code>boolean</code>
+### Vector.isValid(value) ⇒ <code>boolean</code>
 > Determine if a value is a Vector or can be coerced into a vector
 
 

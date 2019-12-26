@@ -5,8 +5,8 @@ const TWO_PI = 2 * Math.PI;
 const validify = (x, y) => isFloat(x, true) && isFloat(y, true);
 
 /**
- * Point model with helper methods
- *
+ * @class Point
+ * @classdesc Point model with helper methods
  * @example
  * ``` javascript
  * import { Point } from 'type-enforcer-math';
@@ -31,8 +31,6 @@ const validify = (x, y) => isFloat(x, true) && isFloat(y, true);
  * console.log(point4.y);
  * // => 6
  * ```
- *
- * @class Point
  *
  * @arg {Number|Array|Object} [x=0]
  * @arg {Number} [y=0]

@@ -13,9 +13,11 @@
 
 <br><a name="is"></a>
 
-### is : <code>object</code>
-> Utility functions for checking if something is a particular data type. Includes all the checks from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer), along with:> > ``` javascript> import { is } from 'type-enforcer-math';> > // Or import individual functions> import { isBoolean, isString } from 'type-enforcer-math';> ```
+## is : <code>object</code>
+> Utility functions for checking if something is a particular data type. Includes all the checks from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer).
 
+**Example**  
+``` javascriptimport { is } from 'type-enforcer-math';// Or import individual functionsimport { isBoolean, isString } from 'type-enforcer-math';```
 
 * [is](#is) : <code>object</code>
     * [.point(value, [coerce])](#is.point) ⇒ <code>Boolean</code>
@@ -24,7 +26,7 @@
 
 <br><a name="is.point"></a>
 
-#### is.point(value, [coerce]) ⇒ <code>Boolean</code>
+### is.point(value, [coerce]) ⇒ <code>Boolean</code>
 > Check if a value is a [Point](docs/Point.md)
 
 **Alias:** `isPoint`
@@ -40,7 +42,7 @@
 
 <br><a name="is.vector"></a>
 
-#### is.vector(value, [coerce]) ⇒ <code>Boolean</code>
+### is.vector(value, [coerce]) ⇒ <code>Boolean</code>
 > Check if a value is a [Vector](docs/Vector.md)
 
 **Alias:** `isVector`

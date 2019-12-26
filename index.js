@@ -1,30 +1,16 @@
 /**
  * @name Installation
+ * @private
  * @summary
  *
- * ```
- * npm install type-enforcer-math
- * ```
  * _Requires Babel 7.2+_
  */
 
 /**
- * @name Docs
+ * @name About
+ * @private
  * @summary
  * type-enforcer-math re-exports everything from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer), along with:
- *
- * #### Extra Data Types
- * - [Point](docs/Point.md)
- * - [Vector](docs/Vector.md)
- *
- * #### Type Checks
- * - [checks](docs/checks.md)
- *
- * #### Type Enforcement
- * - [enforce](docs/enforce.md)
- *
- * #### Type Enforcing Methods
- * - [method](docs/method.md)
  */
 export * from 'type-enforcer';
 

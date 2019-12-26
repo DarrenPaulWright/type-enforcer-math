@@ -6,13 +6,12 @@ import Point from './Point';
 const _ = new PrivateVars();
 
 /**
- * A Euclidean Vector model.
- *
+ * @class Vector
+ * @classdesc A Euclidean Vector model.
+ * @example
  * ``` javascript
  * import { Vector } from 'type-enforcer-math';
  * ```
- *
- * @class Vector
  *
  * @arg {*} [args] - Accepts:
  * <br>- A start and end point (or values that can be coerced into points)
