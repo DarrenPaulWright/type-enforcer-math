@@ -1,6 +1,6 @@
 import { enforceObject } from 'type-enforcer';
-import isVector from '../checks/isVector';
-import Vector from '../Vector';
+import isVector from '../checks/isVector.js';
+import Vector from '../Vector.js';
 
 /**
  * Enforce that a value is a [Vector](docs/Vector.md). Uses [isVector](docs/checks.md#isVector).

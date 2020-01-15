@@ -1,6 +1,6 @@
 import { testCheck } from 'type-enforcer-test-helper';
-import { is, isPoint, isVector } from '../index';
-import { pointData, vectorData } from './testValues';
+import { is, isPoint, isVector } from '../index.js';
+import { pointData, vectorData } from './testValues.js';
 
 describe('checks', () => {
 	describe('isPoint', () => {

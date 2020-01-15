@@ -1,6 +1,6 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { is } from '../index';
-import { localTestTypes } from '../tests/testValues';
+import { is } from '../index.js';
+import { localTestTypes } from '../tests/testValues.js';
 
 localTestTypes.forEach((data) => {
 	suite(`is.${data.name}`, () => {

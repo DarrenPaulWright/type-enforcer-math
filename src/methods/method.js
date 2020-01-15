@@ -1,6 +1,6 @@
 import { method } from 'type-enforcer';
-import methodPoint from './methodPoint';
-import methodVector from './methodVector';
+import methodPoint from './methodPoint.js';
+import methodVector from './methodVector.js';
 
 /**
  * Enforce data types and remove common boilerplate code on class methods. Includes all the methods from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer).

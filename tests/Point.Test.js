@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { multiTest } from 'type-enforcer-test-helper';
-import { Point } from '../index';
-import { pointData } from './testValues';
+import { Point } from '../index.js';
+import { pointData } from './testValues.js';
 
 describe('Point', () => {
 	describe('Init', () => {

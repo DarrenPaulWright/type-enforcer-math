@@ -1,5 +1,5 @@
-import Vector from '../Vector';
-import isPoint from './isPoint';
+import Vector from '../Vector.js';
+import isPoint from './isPoint.js';
 
 /**
  * Check if a value is a [Vector](docs/Vector.md)

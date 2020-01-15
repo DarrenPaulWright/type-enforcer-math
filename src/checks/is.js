@@ -1,6 +1,6 @@
 import { is } from 'type-enforcer';
-import isPoint from './isPoint';
-import isVector from './isVector';
+import isPoint from './isPoint.js';
+import isVector from './isVector.js';
 
 /**
  * Utility functions for checking if something is a particular data type. Includes all the checks from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer).

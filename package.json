@@ -2,12 +2,14 @@
 	"name": "type-enforcer-math",
 	"version": "1.0.3",
 	"description": "An extension of type-enforcer with Math related data types and enforcer functions",
+	"type": "module",
 	"main": "index.js",
 	"files": [
 		"/src"
 	],
 	"sideEffects": false,
 	"scripts": {
+		"clean": "rm -rf node_modules && del /f package-lock.json && npm install",
 		"test": "karma start --single-run",
 		"test-watch": "karma start",
 		"bench": "karma start karma.bench.conf.js",

@@ -1,6 +1,6 @@
 import { enforce } from 'type-enforcer';
-import enforcePoint from './enforcePoint';
-import enforceVector from './enforceVector';
+import enforcePoint from './enforcePoint.js';
+import enforceVector from './enforceVector.js';
 
 /**
  * Utility functions for enforcing data types. Includes all the enforcers from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer).

@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { multiTest } from 'type-enforcer-test-helper';
-import { Point, Vector } from '../index';
-import { vectorData } from './testValues';
+import { Point, Vector } from '../index.js';
+import { vectorData } from './testValues.js';
 
 describe('Vector', () => {
 	describe('init', () => {
@@ -354,7 +354,7 @@ describe('Vector', () => {
 		it('should return a string of the vector', () => {
 			assert.deepEqual(new Vector().valueOf(), [[0, 0], [0, 0]]);
 		});
-		
+
 		it('should return a string of the vector if custom', () => {
 			assert.deepEqual(new Vector([1, 2], [3, 4]).valueOf(), [[1, 2], [3, 4]]);
 		});

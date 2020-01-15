@@ -1,6 +1,6 @@
-import enforceVector from '../enforcer/enforceVector';
-import Vector from '../Vector';
-import methodPoint from './methodPoint';
+import enforceVector from '../enforcer/enforceVector.js';
+import Vector from '../Vector.js';
+import methodPoint from './methodPoint.js';
 
 /**
  * Builds a chainable method for getting/setting a [Vector](docs/Vector.md)

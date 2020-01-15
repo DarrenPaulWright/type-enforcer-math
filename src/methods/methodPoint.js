@@ -1,6 +1,6 @@
 import { methodAny, sameValueZero } from 'type-enforcer';
-import enforcePoint from '../enforcer/enforcePoint';
-import Point from '../Point';
+import enforcePoint from '../enforcer/enforcePoint.js';
+import Point from '../Point.js';
 
 /**
  * Builds a chainable method for getting/setting a [Point](docs/Point.md)

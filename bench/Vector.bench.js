@@ -1,5 +1,5 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { Point, Vector } from '../index';
+import { Point, Vector } from '../index.js';
 
 suite('Vector', () => {
 	let sandbox;

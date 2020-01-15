@@ -1,6 +1,6 @@
 import { benchSettings } from 'karma-webpack-bundle';
-import { enforce } from '../index';
-import { localTestTypes } from '../tests/testValues';
+import { enforce } from '../index.js';
+import { localTestTypes } from '../tests/testValues.js';
 
 localTestTypes.forEach((data) => {
 	suite(`enforce.${data.name}`, () => {

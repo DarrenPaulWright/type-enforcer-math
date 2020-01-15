@@ -1,6 +1,6 @@
 import { enforceObject } from 'type-enforcer';
-import isPoint from '../checks/isPoint';
-import Point from '../Point';
+import isPoint from '../checks/isPoint.js';
+import Point from '../Point.js';
 
 /**
  * Enforce that a value is a [Point](docs/Point.md). Uses [isPoint](docs/checks.md#isPoint).

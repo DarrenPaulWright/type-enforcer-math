@@ -1,7 +1,7 @@
 import { enforceNumber, isArray, isString, methodNumber, PrivateVars } from 'type-enforcer';
-import enforcePoint from './enforcer/enforcePoint';
-import methodPoint from './methods/methodPoint';
-import Point from './Point';
+import enforcePoint from './enforcer/enforcePoint.js';
+import methodPoint from './methods/methodPoint.js';
+import Point from './Point.js';
 
 const _ = new PrivateVars();
 
