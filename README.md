@@ -53,6 +53,25 @@ type-enforcer-math re-exports everything from [type-enforcer](https://github.com
 </dd>
 </dl>
 
+<br>
+
+## Functions
+
+<dl>
+<dt><a href="docs/abbrNumber.md">abbrNumber(value, [settings])</a> ⇒ <code>string</code></dt>
+<dd><p>Abbreviates a number in a human readable format.</p>
+</dd>
+<dt><a href="docs/fractionDigits.md">fractionDigits(value)</a></dt>
+<dd><p>Gets the number of digits to the right of the decimal point.</p>
+</dd>
+<dt><a href="docs/fractionDigits.md">fractionDigits(value)</a></dt>
+<dd><p>Gets the number of digits to the left of the decimal point.</p>
+</dd>
+<dt><a href="docs/round.md">round(value, [fractionDigits], [precision])</a></dt>
+<dd><p>Rounds a number to a specified number of fraction digits and/or precision</p>
+</dd>
+</dl>
+
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg
 [npm-url]: https://npmjs.com/package/type-enforcer-math
 [build]: https://travis-ci.org/DarrenPaulWright/type-enforcer-math.svg?branch&#x3D;master
