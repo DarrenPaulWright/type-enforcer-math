@@ -24,6 +24,7 @@
 		"docs:method": "jsdoc2md src/methods/**/*.js > docs/method.md -t node_modules/dmd-readable/docs.hbs --plugin dmd-readable",
 		"docs:checks": "jsdoc2md src/checks/**/*.js > docs/is.md -t node_modules/dmd-readable/docs.hbs --plugin dmd-readable",
 		"docs:main": "exec-each --out docs/{basefile}.md src/*.js jsdoc2md -- {path} -t node_modules/dmd-readable/docs.hbs --plugin dmd-readable",
+		"docs:utility": "exec-each --out docs/{basefile}.md src/utility/*.js jsdoc2md -- {path} -t node_modules/dmd-readable/docs.hbs --plugin dmd-readable",
 		"docs": "run-p docs:*"
 	},
 	"badges": {

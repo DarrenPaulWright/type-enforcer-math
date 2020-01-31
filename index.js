@@ -14,17 +14,22 @@
  */
 export * from 'type-enforcer';
 
-export { default as is } from './src/checks/is';
-export { default as isPoint } from './src/checks/isPoint';
-export { default as isVector } from './src/checks/isVector';
+export { default as is } from './src/checks/is.js';
+export { default as isPoint } from './src/checks/isPoint.js';
+export { default as isVector } from './src/checks/isVector.js';
 
-export { default as enforce } from './src/enforcer/enforce';
-export { default as enforcePoint } from './src/enforcer/enforcePoint';
-export { default as enforceVector } from './src/enforcer/enforceVector';
+export { default as enforce } from './src/enforcer/enforce.js';
+export { default as enforcePoint } from './src/enforcer/enforcePoint.js';
+export { default as enforceVector } from './src/enforcer/enforceVector.js';
 
-export { default as method } from './src/methods/method';
-export { default as methodPoint } from './src/methods/methodPoint';
-export { default as methodVector } from './src/methods/methodVector';
+export { default as method } from './src/methods/method.js';
+export { default as methodPoint } from './src/methods/methodPoint.js';
+export { default as methodVector } from './src/methods/methodVector.js';
 
-export { default as Point } from './src/Point';
-export { default as Vector } from './src/Vector';
+export { default as Point } from './src/Point.js';
+export { default as Vector } from './src/Vector.js';
+
+export { default as fractionDigits } from './src/utility/fractionDigits.js';
+export { default as integerDigits } from './src/utility/integerDigits.js';
+export { default as round } from './src/utility/round.js';
+export { default as abbrNumber, metricPrefixNames } from './src/utility/abbrNumber.js';
