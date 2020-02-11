@@ -1,5 +1,8 @@
 # Type Enforcer Math
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/DarrenPaulWright/type-enforcer-math.svg)](https://greenkeeper.io/)
+
+
 > An extension of type-enforcer with Math related data types and enforcer functions
 >
 > [![npm][npm]][npm-url]
