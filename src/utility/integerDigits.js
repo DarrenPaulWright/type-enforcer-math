@@ -1,16 +1,10 @@
-import { isFloat } from 'type-enforcer';
+import firstDigit from './firstDigit.js';
 
 /**
  * Gets the number of digits to the left of the decimal point.
  *
- * @function fractionDigits
+ * @function integerDigits
  *
  * @arg {Number} value
  */
-export default (value) => {
-	if (!isFloat(value) || Math.abs(value) < 1) {
-		return 0;
-	}
-
-	return Math.ceil(Math.log10(Math.abs(value) + 1));
-}
+export default (value) => Math.max(0, firstDigit(value));

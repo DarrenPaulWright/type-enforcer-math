@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { fractionDigits } from '../../index.js';
 
-describe.only('fractionDigits', () => {
+describe('fractionDigits', () => {
 	it('should return 0 for an integer', () => {
 		assert.strictEqual(fractionDigits(22346), 0);
 	});

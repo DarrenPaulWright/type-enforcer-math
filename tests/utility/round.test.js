@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { round } from '../../index.js';
 
-describe.only('round', () => {
+describe('round', () => {
 	it('should round a float to an int by default', () => {
 		assert.strictEqual(round(12.34), 12);
 	});

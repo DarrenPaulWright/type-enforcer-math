@@ -29,6 +29,7 @@ export { default as methodVector } from './src/methods/methodVector.js';
 export { default as Point } from './src/Point.js';
 export { default as Vector } from './src/Vector.js';
 
+export { default as firstDigit } from './src/utility/firstDigit.js';
 export { default as fractionDigits } from './src/utility/fractionDigits.js';
 export { default as integerDigits } from './src/utility/integerDigits.js';
 export { default as round } from './src/utility/round.js';

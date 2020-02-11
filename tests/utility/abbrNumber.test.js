@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import displayValue from 'display-value';
 import { abbrNumber } from '../../index.js';
 
-describe.only('abbrNumber', () => {
+describe('abbrNumber', () => {
 	it('should return "0" for 0', () => {
 		assert.strictEqual(abbrNumber(0), '0');
 	});

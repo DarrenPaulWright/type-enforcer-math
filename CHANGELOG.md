@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
+## [1.2.0] - 2020-02-11
+### Added
+- [firstDigit](docs/firstDigit.md)
+
 ## [1.1.0] - 2020-01-31
 ### Added
 - [abbrNumber](docs/abbrNumber.md)
@@ -31,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Migrated Point and Vector classes and functions from type-enforcer
 
+[1.2.0]: https://github.com/DarrenPaulWright/type-enforcer-math/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/DarrenPaulWright/type-enforcer-math/compare/v1.0.4...v1.1.0
 [1.0.4]: https://github.com/DarrenPaulWright/type-enforcer-math/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/DarrenPaulWright/type-enforcer-math/compare/v1.0.2...v1.0.3
