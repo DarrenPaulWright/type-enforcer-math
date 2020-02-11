@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.2.0] - 2020-02-11
 ### Added
 - [firstDigit](docs/firstDigit.md)
+- [pow10](docs/pow10.md)
 
 ## [1.1.0] - 2020-01-31
 ### Added
