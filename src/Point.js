@@ -1,4 +1,5 @@
 import { enforceNumber, isArray, isFloat, isString } from 'type-enforcer';
+import round from './utility/round.js';
 
 const SEPARATOR = ',';
 const TWO_PI = 2 * Math.PI;
@@ -146,12 +147,12 @@ export default class Point {
 	 * @memberOf Point
 	 * @instance
 	 *
-	 * @arg {Point} point2
+	 * @arg {Point} point
 	 *
-	 * @returns {Boolean}
+	 * @returns {Point}
 	 */
-	add(point2) {
-		return new Point(this.x + point2.x, this.y + point2.y);
+	add(point) {
+		return new Point(this.x + point.x, this.y + point.y);
 	}
 
 	/**
@@ -160,12 +161,41 @@ export default class Point {
 	 * @memberOf Point
 	 * @instance
 	 *
-	 * @arg {Point} point2
+	 * @arg {Point} point
 	 *
-	 * @returns {Boolean}
+	 * @returns {Point}
 	 */
-	subtract(point2) {
-		return new Point(this.x - point2.x, this.y - point2.y);
+	subtract(point) {
+		return new Point(this.x - point.x, this.y - point.y);
+	}
+
+	/**
+	 * Multiplies the coordinates of another point with this one and returns a new point
+	 *
+	 * @memberOf Point
+	 * @instance
+	 *
+	 * @arg {Point} point
+	 *
+	 * @returns {Point}
+	 */
+	multiply(point) {
+		return new Point(this.x * point.x, this.y * point.y);
+	}
+
+	/**
+	 * Rounds the coordinates of this point and returns a new point
+	 *
+	 * @memberOf Point
+	 * @instance
+	 *
+	 * @arg {int} [fractionDigits=0] - Must be a positive integer or null
+	 * @arg {int} [precision] - Significant digits
+	 *
+	 * @returns {Point}
+	 */
+	round(fractionDigits, precision) {
+		return new Point(round(this.x, fractionDigits, precision), round(this.y, fractionDigits, precision));
 	}
 
 	/**

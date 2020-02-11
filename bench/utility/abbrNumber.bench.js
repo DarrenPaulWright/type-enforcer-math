@@ -1,7 +1,7 @@
 import { benchSettings } from 'karma-webpack-bundle';
 import { abbrNumber } from '../../index.js';
 
-suite.only('abbrNumber', () => {
+suite('abbrNumber', () => {
 	let sandbox;
 
 	benchmark('0', () => {

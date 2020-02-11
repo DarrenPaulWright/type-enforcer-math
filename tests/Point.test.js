@@ -171,6 +171,28 @@ describe('Point', () => {
 		});
 	});
 
+	describe('.multiply', () => {
+		it('should return a new Point with appropriate values', () => {
+			const point = new Point(7, 2);
+
+			assert.deepEqual(point.multiply(new Point(3, 4)), new Point(21, 8));
+		});
+	});
+
+	describe('.round', () => {
+		it('should return a new Point rounded to 3 fraction digts', () => {
+			const point = new Point(7.123456789, 21234.123456789);
+
+			assert.deepEqual(point.round(3), new Point(7.123, 21234.123));
+		});
+
+		it('should return a new Point rounded to 3 significant digts', () => {
+			const point = new Point(7.123456789, 21234.123456789);
+
+			assert.deepEqual(point.round(null, 3), new Point(7.12, 21200));
+		});
+	});
+
 	describe('.distance', () => {
 		it('should return a Number with appropriate value', () => {
 			const point = new Point(3, 4);
