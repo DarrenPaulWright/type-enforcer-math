@@ -1,6 +1,6 @@
 {
 	"name": "type-enforcer-math",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "An extension of type-enforcer with Math related data types and enforcer functions",
 	"type": "module",
 	"main": "index.js",
