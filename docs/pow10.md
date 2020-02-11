@@ -11,17 +11,15 @@
 [![license][license]][license-url]
 
 
-<br><a name="round"></a>
+<br><a name="pow10"></a>
 
-## round(value, [fractionDigits], [precision])
-> Rounds a number to a specified number of fraction digits and/or precision
+## pow10(n) ⇒ <code>int</code>
+> Performance optimized version of Math.pow(10, n) for integers (up to 2x improvement for certain values)
 
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| value | <code>Number</code> |  |  |
-| [fractionDigits] | <code>int</code> | <code>0</code> | Must be a positive integer or null |
-| [precision] | <code>int</code> |  | Significant digits |
+| Param | Type | Description |
+| --- | --- | --- |
+| n | <code>int</code> | Must be an int! |
 
 
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg

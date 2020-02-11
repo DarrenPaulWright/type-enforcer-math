@@ -11,9 +11,9 @@
 [![license][license]][license-url]
 
 
-<br><a name="fractionDigits"></a>
+<br><a name="integerDigits"></a>
 
-## fractionDigits(value)
+## integerDigits(value)
 > Gets the number of digits to the left of the decimal point.
 
 

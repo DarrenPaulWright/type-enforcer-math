@@ -11,17 +11,16 @@
 [![license][license]][license-url]
 
 
-<br><a name="round"></a>
+<br><a name="firstDigit"></a>
 
-## round(value, [fractionDigits], [precision])
-> Rounds a number to a specified number of fraction digits and/or precision
+## firstDigit(value) ⇒ <code>int</code>
+> Gets the number of the position of the first digit.
 
+**Returns**: <code>int</code> - For numbers >= 1 (+/-) the result is identical to integerDigits. 0 and non-floats return 0. Numbers between 0 and 1 (+/-) return the position as a negative int, so 0.1 -> 0, 0.0001 -> -3, etc.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| value | <code>Number</code> |  |  |
-| [fractionDigits] | <code>int</code> | <code>0</code> | Must be a positive integer or null |
-| [precision] | <code>int</code> |  | Significant digits |
+| Param | Type |
+| --- | --- |
+| value | <code>Number</code> | 
 
 
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg

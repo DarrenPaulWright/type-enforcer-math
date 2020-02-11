@@ -23,8 +23,10 @@
         * [.set(x, y)](#Point+set) ⇒ <code>this</code>
         * [.toString([suffix])](#Point+toString) ⇒ <code>String</code>
         * [.isSame(point2)](#Point+isSame) ⇒ <code>Boolean</code>
-        * [.add(point2)](#Point+add) ⇒ <code>Boolean</code>
-        * [.subtract(point2)](#Point+subtract) ⇒ <code>Boolean</code>
+        * [.add(point)](#Point+add) ⇒ [<code>Point</code>](#Point)
+        * [.subtract(point)](#Point+subtract) ⇒ [<code>Point</code>](#Point)
+        * [.multiply(point)](#Point+multiply) ⇒ [<code>Point</code>](#Point)
+        * [.round([fractionDigits], [precision])](#Point+round) ⇒ [<code>Point</code>](#Point)
         * [.distance()](#Point+distance) ⇒ <code>Number</code>
         * [.angle()](#Point+angle) ⇒ <code>Boolean</code>
         * [.pointAtDistance(angle, distance)](#Point+pointAtDistance) ⇒ <code>Boolean</code>
@@ -82,24 +84,47 @@
 
 <br><a name="Point+add"></a>
 
-### point.add(point2) ⇒ <code>Boolean</code>
+### point.add(point) ⇒ [<code>Point</code>](#Point)
 > Adds the coordinates of another point to this one and returns a new point
 
 
 | Param | Type |
 | --- | --- |
-| point2 | [<code>Point</code>](#Point) | 
+| point | [<code>Point</code>](#Point) | 
 
 
 <br><a name="Point+subtract"></a>
 
-### point.subtract(point2) ⇒ <code>Boolean</code>
+### point.subtract(point) ⇒ [<code>Point</code>](#Point)
 > Subtracts the coordinates of another point from this one and returns a new point
 
 
 | Param | Type |
 | --- | --- |
-| point2 | [<code>Point</code>](#Point) | 
+| point | [<code>Point</code>](#Point) | 
+
+
+<br><a name="Point+multiply"></a>
+
+### point.multiply(point) ⇒ [<code>Point</code>](#Point)
+> Multiplies the coordinates of another point with this one and returns a new point
+
+
+| Param | Type |
+| --- | --- |
+| point | [<code>Point</code>](#Point) | 
+
+
+<br><a name="Point+round"></a>
+
+### point.round([fractionDigits], [precision]) ⇒ [<code>Point</code>](#Point)
+> Rounds the coordinates of this point and returns a new point
+
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [fractionDigits] | <code>int</code> | <code>0</code> | Must be a positive integer or null |
+| [precision] | <code>int</code> |  | Significant digits |
 
 
 <br><a name="Point+distance"></a>
