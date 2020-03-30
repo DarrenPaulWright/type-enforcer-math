@@ -1,5 +1,10 @@
-import { difference, testTypes, testValues } from 'type-enforcer-test-helper';
+import { testTypes, testValues } from 'type-enforcer-test-helper';
 import { Point, Vector } from '../index.js';
+
+const difference = (array1, ...args) => {
+	let diffArrays = [].concat(...args);
+	return array1.filter((item) => !diffArrays.includes(item));
+};
 
 export const validPoints = [new Point(1, 2), new Point([3, 4])];
 export const validVectors = [new Vector([1, 2], [3, 4]), new Vector([3, 4], [5, 6])];

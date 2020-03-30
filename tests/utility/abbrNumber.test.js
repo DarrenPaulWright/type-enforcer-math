@@ -1,10 +1,10 @@
-import { assert } from 'chai';
 import displayValue from 'display-value';
+import { assert } from 'type-enforcer';
 import { abbrNumber } from '../../index.js';
 
 describe('abbrNumber', () => {
 	it('should return "0" for 0', () => {
-		assert.strictEqual(abbrNumber(0), '0');
+		assert.is(abbrNumber(0), '0');
 	});
 
 	[
@@ -35,11 +35,11 @@ describe('abbrNumber', () => {
 		[500, '500'],
 		[990, '990'],
 		// > 1000
-		[1234, '1k', {precision: 1}],
+		[1234, '1k', { precision: 1 }],
 		[1234, '1.2k'],
 		[-1234, '-1.2k'],
-		[1234, '1.23k', {precision: 3}],
-		[1234, '1.234k', {precision: 4}],
+		[1234, '1.23k', { precision: 3 }],
+		[1234, '1.234k', { precision: 4 }],
 		// > 1e6
 		[1.2e7, '12M'],
 		[-1.2e7, '-12M'],
@@ -65,12 +65,12 @@ describe('abbrNumber', () => {
 		.forEach((data) => {
 			if (data.length > 2) {
 				it(`should return ${displayValue(data[1])} for ${displayValue(data[0])} and settings ${displayValue(data[2])}`, () => {
-					assert.strictEqual(abbrNumber(data[0], data[2]), data[1]);
+					assert.is(abbrNumber(data[0], data[2]), data[1]);
 				});
 			}
 			else {
 				it(`should return ${displayValue(data[1])} for ${displayValue(data[0])}`, () => {
-					assert.strictEqual(abbrNumber(data[0]), data[1]);
+					assert.is(abbrNumber(data[0]), data[1]);
 				});
 			}
 
@@ -79,7 +79,7 @@ describe('abbrNumber', () => {
 				suffix: 's'
 			};
 			it(`should return ${displayValue(data[1] + 's')} for ${displayValue(data[0])} and settings ${displayValue(settings)}`, () => {
-				assert.strictEqual(abbrNumber(data[0], settings), data[1] + 's');
+				assert.is(abbrNumber(data[0], settings), data[1] + 's');
 			});
 		});
 });

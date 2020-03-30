@@ -10,7 +10,7 @@ const PERFORMANCE_CUTOFF = 1e-35;
  * @arg {Number} value
  */
 export default (value) => {
-	if (!isFloat(value)) {
+	if (!isFloat(value) || value === 0) {
 		return 0;
 	}
 

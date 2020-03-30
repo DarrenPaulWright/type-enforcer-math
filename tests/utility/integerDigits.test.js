@@ -1,5 +1,5 @@
-import { assert } from 'chai';
 import displayValue from 'display-value';
+import { assert } from 'type-enforcer';
 import { integerDigits } from '../../index.js';
 
 describe('integerDigits', () => {
@@ -28,11 +28,11 @@ describe('integerDigits', () => {
 	]
 		.forEach((data) => {
 			it(`should return ${displayValue(data[1])} for ${displayValue(data[0])}`, () => {
-				assert.strictEqual(integerDigits(data[0]), data[1]);
+				assert.is(integerDigits(data[0]), data[1]);
 			});
 
 			it(`should return ${displayValue(data[1])} for -${displayValue(data[0])}`, () => {
-				assert.strictEqual(integerDigits(-data[0]), data[1]);
+				assert.is(integerDigits(-data[0]), data[1]);
 			});
 		});
 });
