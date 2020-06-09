@@ -1,6 +1,6 @@
 {
 	"name": "type-enforcer-math",
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"description": "An extension of type-enforcer with Math related data types and enforcer functions",
 	"author": {
 		"name": "Darren Paul Wright",
