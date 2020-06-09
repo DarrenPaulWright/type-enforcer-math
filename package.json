@@ -84,13 +84,13 @@
 	"homepage": "https://github.com/DarrenPaulWright/type-enforcer-math#readme",
 	"dependencies": {
 		"object-agent": "^1.4.12",
-		"type-enforcer": "^1.1.3"
+		"type-enforcer": "^1.1.4"
 	},
 	"devDependencies": {
 		"dmd-readable": "^1.2.1",
 		"exec-each": "0.0.3",
-		"jsdoc-to-markdown": "^5.0.3",
-		"karma-webpack-bundle": "^0.4.1",
+		"jsdoc-to-markdown": "^6.0.1",
+		"karma-webpack-bundle": "^0.4.2",
 		"npm-run-all": "^4.1.5",
 		"type-enforcer-test-helper": "^1.3.3"
 	}
