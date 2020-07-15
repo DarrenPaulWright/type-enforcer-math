@@ -84,7 +84,7 @@
 	"homepage": "https://github.com/DarrenPaulWright/type-enforcer-math#readme",
 	"dependencies": {
 		"object-agent": "^1.4.13",
-		"type-enforcer": "^1.1.5"
+		"type-enforcer": "^1.2.0"
 	},
 	"devDependencies": {
 		"dmd-readable": "^1.2.2",
