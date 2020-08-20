@@ -84,8 +84,8 @@ type-enforcer-math re-exports everything from [type-enforcer](https://github.com
 [build-url]: https://travis-ci.org/DarrenPaulWright/type-enforcer-math
 [coverage]: https://coveralls.io/repos/github/DarrenPaulWright/type-enforcer-math/badge.svg?branch&#x3D;master
 [coverage-url]: https://coveralls.io/github/DarrenPaulWright/type-enforcer-math?branch&#x3D;master
-[deps]: https://david-dm.org/darrenpaulwright/type-enforcer-math.svg
-[deps-url]: https://david-dm.org/darrenpaulwright/type-enforcer-math
+[deps]: https://david-dm.org/DarrenPaulWright/type-enforcer-math.svg
+[deps-url]: https://david-dm.org/DarrenPaulWright/type-enforcer-math
 [size]: https://packagephobia.now.sh/badge?p&#x3D;type-enforcer-math
 [size-url]: https://packagephobia.now.sh/result?p&#x3D;type-enforcer-math
 [vulnerabilities]: https://snyk.io/test/github/DarrenPaulWright/type-enforcer-math/badge.svg?targetFile&#x3D;package.json
