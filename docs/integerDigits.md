@@ -13,13 +13,13 @@
 
 <br><a name="integerDigits"></a>
 
-## integerDigits(value)
+## integerDigits(value) ⇒ <code>number.int</code>
 > Gets the number of digits to the left of the decimal point.
 
 
-| Param | Type |
-| --- | --- |
-| value | <code>Number</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>number</code> | The number to check. |
 
 
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg

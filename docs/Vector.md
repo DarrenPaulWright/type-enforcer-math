@@ -20,14 +20,14 @@
 * [Vector](#Vector)
     * [new Vector([args])](#new_Vector_new)
     * _instance_
-        * [.isSame(vector2)](#Vector+isSame) ⇒ <code>Boolean</code>
-        * [.invert()](#Vector+invert)
-        * [.toString()](#Vector+toString)
-        * [.valueOf()](#Vector+valueOf)
+        * [.isSame(vector2)](#Vector+isSame) ⇒ <code>boolean</code>
+        * [.invert()](#Vector+invert) ⇒ <code>this</code>
+        * [.toString()](#Vector+toString) ⇒ <code>string</code>
+        * [.valueOf()](#Vector+valueOf) ⇒ <code>Array</code>
         * [.start([point])](#Vector+start) ⇒ <code>Point</code>
         * [.end([point])](#Vector+end) ⇒ <code>Point</code>
-        * [.length([length])](#Vector+length) ⇒ <code>Number</code>
-        * [.angle([angle])](#Vector+angle) ⇒ <code>Number</code>
+        * [.length([length])](#Vector+length) ⇒ <code>number</code>
+        * [.angle([angle])](#Vector+angle) ⇒ <code>number</code>
         * [.offset([point])](#Vector+offset) ⇒ <code>Point</code>
     * _static_
         * [.isValid(value)](#Vector.isValid) ⇒ <code>boolean</code>
@@ -42,35 +42,38 @@
 | [args] | <code>\*</code> | Accepts: <br>- A start and end point (or values that can be coerced into points) <br>- An array of two points (or values that can be coerced into points) <br>- Another vector instance <br>- A single start point (or value that can be coerced into a point) |
 
 **Example**  
-``` javascriptimport { Vector } from 'type-enforcer-math';```
+``` javascript
+import { Vector } from 'type-enforcer-math';
+```
 
 <br><a name="Vector+isSame"></a>
 
-### vector.isSame(vector2) ⇒ <code>Boolean</code>
-> Determine if another vector is the same as this one
+### vector.isSame(vector2) ⇒ <code>boolean</code>
+> Determine if another vector is the same as this one.
 
 
-| Param | Type |
-| --- | --- |
-| vector2 | [<code>Vector</code>](#Vector) | 
+| Param | Type | Description |
+| --- | --- | --- |
+| vector2 | [<code>Vector</code>](#Vector) | Another vector. |
 
 
 <br><a name="Vector+invert"></a>
 
-### vector.invert()
-> Switch the start and end points
+### vector.invert() ⇒ <code>this</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
+
+> Switch the start and end points.
 
 
 <br><a name="Vector+toString"></a>
 
-### vector.toString()
-> Get a string representation of the value of the vector
+### vector.toString() ⇒ <code>string</code>
+> Get a string representation of the value of the vector.
 
 
 <br><a name="Vector+valueOf"></a>
 
-### vector.valueOf()
-> Returns an array with the values of the start and end points
+### vector.valueOf() ⇒ <code>Array</code>
+> Returns an array with the values of the start and end points.
 
 
 <br><a name="Vector+start"></a>
@@ -99,26 +102,26 @@
 
 <br><a name="Vector+length"></a>
 
-### vector.length([length]) ⇒ <code>Number</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
+### vector.length([length]) ⇒ <code>number</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
 
 > The length (magnitude) of the vector. Resets the end point.
 
 
 | Param | Type |
 | --- | --- |
-| [length] | <code>Number</code> | 
+| [length] | <code>number</code> | 
 
 
 <br><a name="Vector+angle"></a>
 
-### vector.angle([angle]) ⇒ <code>Number</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
+### vector.angle([angle]) ⇒ <code>number</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_`🔗 Chainable`_
 
 > The angle from the start point to the end point. Resets the end point
 
 
 | Param | Type |
 | --- | --- |
-| [angle] | <code>Number</code> | 
+| [angle] | <code>number</code> | 
 
 
 <br><a name="Vector+offset"></a>
@@ -136,12 +139,12 @@
 <br><a name="Vector.isValid"></a>
 
 ### Vector.isValid(value) ⇒ <code>boolean</code>
-> Determine if a value is a Vector or can be coerced into a vector
+> Determine if a value is a Vector or can be coerced into a vector.
 
 
-| Param | Type |
-| --- | --- |
-| value | <code>\*</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>\*</code> | The value to check. |
 
 
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg

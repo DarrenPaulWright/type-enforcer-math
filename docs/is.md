@@ -17,16 +17,21 @@
 > Utility functions for checking if something is a particular data type. Includes all the checks from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer).
 
 **Example**  
-``` javascriptimport { is } from 'type-enforcer-math';// Or import individual functionsimport { isBoolean, isString } from 'type-enforcer-math';```
+``` javascript
+import { is } from 'type-enforcer-math';
+
+// Or import individual functions
+import { isBoolean, isString } from 'type-enforcer-math';
+```
 
 * [is](#is) : <code>object</code>
-    * [.point(value, [coerce])](#is.point) ⇒ <code>Boolean</code>
-    * [.vector(value, [coerce])](#is.vector) ⇒ <code>Boolean</code>
+    * [.point(value, [coerce])](#is.point) ⇒ <code>boolean</code>
+    * [.vector(value, [coerce])](#is.vector) ⇒ <code>boolean</code>
 
 
 <br><a name="is.point"></a>
 
-### is.point(value, [coerce]) ⇒ <code>Boolean</code>
+### is.point(value, [coerce]) ⇒ <code>boolean</code>
 > Check if a value is a [Point](docs/Point.md)
 
 **Alias:** `isPoint`
@@ -35,14 +40,25 @@
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | value | <code>\*</code> |  |  |
-| [coerce] | <code>Boolean</code> | <code>false</code> | If true then see if the value can be coerced into a Point |
+| [coerce] | <code>boolean</code> | <code>false</code> | If true then see if the value can be coerced into a Point |
 
 **Example**  
-``` javascriptimport { isPoint } from 'type-enforcer-math';isPoint(new Point());// => trueisPoint('1,2');// => falseisPoint('1,2', true);// => true```
+``` javascript
+import { isPoint } from 'type-enforcer-math';
+
+isPoint(new Point());
+// => true
+
+isPoint('1,2');
+// => false
+
+isPoint('1,2', true);
+// => true
+```
 
 <br><a name="is.vector"></a>
 
-### is.vector(value, [coerce]) ⇒ <code>Boolean</code>
+### is.vector(value, [coerce]) ⇒ <code>boolean</code>
 > Check if a value is a [Vector](docs/Vector.md)
 
 **Alias:** `isVector`
@@ -51,10 +67,21 @@
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | value | <code>\*</code> |  |  |
-| [coerce] | <code>Boolean</code> | <code>false</code> | If true then see if the value can be coerced into a Vector |
+| [coerce] | <code>boolean</code> | <code>false</code> | If true then see if the value can be coerced into a Vector |
 
 **Example**  
-``` javascriptimport { isVector } from 'type-enforcer-math';isVector(new Vector());// => trueisVector('[[1,2],[3,4]]');// => falseisVector('[[1,2],[3,4]]', true);// => true```
+``` javascript
+import { isVector } from 'type-enforcer-math';
+
+isVector(new Vector());
+// => true
+
+isVector('[[1,2],[3,4]]');
+// => false
+
+isVector('[[1,2],[3,4]]', true);
+// => true
+```
 
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg
 [npm-url]: https://npmjs.com/package/type-enforcer-math

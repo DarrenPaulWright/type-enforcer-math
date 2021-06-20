@@ -13,14 +13,14 @@
 
 <br><a name="firstDigit"></a>
 
-## firstDigit(value) ⇒ <code>int</code>
+## firstDigit(value) ⇒ <code>number.int</code>
 > Gets the number of the position of the first digit.
 
-**Returns**: <code>int</code> - For numbers >= 1 (+/-) the result is identical to integerDigits. 0 and non-floats return 0. Numbers between 0 and 1 (+/-) return the position as a negative int, so 0.1 -> 0, 0.0001 -> -3, etc.  
+**Returns**: <code>number.int</code> - For numbers >= 1 (+/-) the result is identical to integerDigits. 0 and non-floats return 0. Numbers between 0 and 1 (+/-) return the position as a negative int, so 0.1 -> 0, 0.0001 -> -3, etc.  
 
-| Param | Type |
-| --- | --- |
-| value | <code>Number</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>number</code> | The number to check. |
 
 
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg

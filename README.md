@@ -61,20 +61,20 @@ type-enforcer-math re-exports everything from [type-enforcer](https://github.com
 <dt><a href="docs/abbrNumber.md">abbrNumber(value, [settings])</a> ⇒ <code>string</code></dt>
 <dd><p>Abbreviates a number in a human readable format.</p>
 </dd>
-<dt><a href="docs/firstDigit.md">firstDigit(value)</a> ⇒ <code>int</code></dt>
+<dt><a href="docs/firstDigit.md">firstDigit(value)</a> ⇒ <code>number.int</code></dt>
 <dd><p>Gets the number of the position of the first digit.</p>
 </dd>
-<dt><a href="docs/fractionDigits.md">fractionDigits(value)</a></dt>
+<dt><a href="docs/fractionDigits.md">fractionDigits(value)</a> ⇒ <code>number.int</code></dt>
 <dd><p>Gets the number of digits to the right of the decimal point.</p>
 </dd>
-<dt><a href="docs/integerDigits.md">integerDigits(value)</a></dt>
+<dt><a href="docs/integerDigits.md">integerDigits(value)</a> ⇒ <code>number.int</code></dt>
 <dd><p>Gets the number of digits to the left of the decimal point.</p>
 </dd>
-<dt><a href="docs/pow10.md">pow10(n)</a> ⇒ <code>int</code></dt>
-<dd><p>Performance optimized version of Math.pow(10, n) for integers (up to 2x improvement for certain values)</p>
+<dt><a href="docs/pow10.md">pow10(n)</a> ⇒ <code>number.int</code></dt>
+<dd><p>Performance optimized version of Math.pow(10, n) for integers (up to 2x improvement for certain values).</p>
 </dd>
-<dt><a href="docs/round.md">round(value, [fractionDigits], [precision])</a></dt>
-<dd><p>Rounds a number to a specified number of fraction digits and/or precision</p>
+<dt><a href="docs/round.md">round(value, [fractionDigits], [precision])</a> ⇒ <code>number.int</code></dt>
+<dd><p>Rounds a number to a specified number of fraction digits and/or precision.</p>
 </dd>
 </dl>
 

@@ -20,11 +20,11 @@
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| value | <code>Number</code> |  |  |
-| [settings] | <code>Object</code> |  |  |
-| [settings.precision] | <code>Number</code> | <code>2</code> | passed to round() |
-| [settings.prefix] | <code>Object</code> |  | An object of unit name prefixes to use when shortening numbers. {'-8': 'y', '-7': 'z', ... '-1': 'm', '0': '', '1': 'k', ... '7': 'Z', '8': 'Y'}. The default prefixes are single character symbols like 'k' and 'μ' while full prefix names are provided via the separately exported "metricPrefixNames" |
-| [settings.suffix] | <code>String</code> | <code>&#x27;&#x27;</code> | Appended after the prefix |
+| value | <code>number</code> |  | The number to abbreviate. |
+| [settings] | <code>object</code> |  | Setting object. |
+| [settings.precision] | <code>number</code> | <code>2</code> | Passed to round(). |
+| [settings.prefix] | <code>object</code> |  | An object of unit name prefixes to use when shortening numbers. {'-8': 'y', '-7': 'z', ... '-1': 'm', '0': '', '1': 'k', ... '7': 'Z', '8': 'Y'}. The default prefixes are single character symbols like 'k' and 'μ' while full prefix names are provided via the separately exported "metricPrefixNames". |
+| [settings.suffix] | <code>string</code> | <code>&quot;&#x27;&#x27;&quot;</code> | Appended after the prefix. |
 
 
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg

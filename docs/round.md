@@ -13,15 +13,15 @@
 
 <br><a name="round"></a>
 
-## round(value, [fractionDigits], [precision])
-> Rounds a number to a specified number of fraction digits and/or precision
+## round(value, [fractionDigits], [precision]) ⇒ <code>number.int</code>
+> Rounds a number to a specified number of fraction digits and/or precision.
 
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| value | <code>Number</code> |  |  |
-| [fractionDigits] | <code>int</code> | <code>0</code> | Must be a positive integer or null |
-| [precision] | <code>int</code> |  | Significant digits |
+| value | <code>number</code> |  | The number to be rounded. |
+| [fractionDigits] | <code>number.int</code> | <code>0</code> | Must be a positive integer or null. |
+| [precision] | <code>number.int</code> | <code>0</code> | Significant digits. |
 
 
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg

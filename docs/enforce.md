@@ -17,7 +17,12 @@
 > Utility functions for enforcing data types. Includes all the enforcers from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer).
 
 **Example**  
-``` javascriptimport { enforce } from 'type-enforcer-math';// Or import individual functionsimport { enforceBoolean, enforceString } from 'type-enforcer-math';```
+``` javascript
+import { enforce } from 'type-enforcer-math';
+
+// Or import individual functions
+import { enforceBoolean, enforceString } from 'type-enforcer-math';
+```
 
 * [enforce](#enforce) : <code>object</code>
     * [.point(value, alt, [coerce])](#enforce.point) ⇒ <code>Point</code>
@@ -36,10 +41,21 @@
 | --- | --- | --- | --- |
 | value | <code>\*</code> |  |  |
 | alt | <code>Point</code> |  | Returned if the value is not the correct type |
-| [coerce] | <code>Boolean</code> | <code>false</code> | If true then coerce the value when possible |
+| [coerce] | <code>boolean</code> | <code>false</code> | If true then coerce the value when possible |
 
 **Example**  
-``` javascriptimport { enforce } from 'type-enforcer-math';enforce.point(new Point(1, 2), new Point());// => point 1,2enforce.point('1,2', new Point());// => point 0,0enforce.point('1,2', new Point(), true);// => point 1,2```
+``` javascript
+import { enforce } from 'type-enforcer-math';
+
+enforce.point(new Point(1, 2), new Point());
+// => point 1,2
+
+enforce.point('1,2', new Point());
+// => point 0,0
+
+enforce.point('1,2', new Point(), true);
+// => point 1,2
+```
 
 <br><a name="enforce.vector"></a>
 
@@ -53,10 +69,21 @@
 | --- | --- | --- | --- |
 | value | <code>\*</code> |  |  |
 | alt | <code>Vector</code> |  | Returned if the value is not the correct type |
-| [coerce] | <code>Boolean</code> | <code>false</code> | If true then coerce the value when possible |
+| [coerce] | <code>boolean</code> | <code>false</code> | If true then coerce the value when possible |
 
 **Example**  
-``` javascriptimport { enforce } from 'type-enforcer-math';enforce.vector(new Vector('[[1,2],[3,4]]'), new Vector());// => vector of '[[1,2],[3,4]]'enforce.vector('[[1,2],[3,4]]', new Vector());// => vector of '[[0,0],[0,0]]'enforce.vector('[[1,2],[3,4]]', new Vector(), true);// => vector of '[[1,2],[3,4]]'```
+``` javascript
+import { enforce } from 'type-enforcer-math';
+
+enforce.vector(new Vector('[[1,2],[3,4]]'), new Vector());
+// => vector of '[[1,2],[3,4]]'
+
+enforce.vector('[[1,2],[3,4]]', new Vector());
+// => vector of '[[0,0],[0,0]]'
+
+enforce.vector('[[1,2],[3,4]]', new Vector(), true);
+// => vector of '[[1,2],[3,4]]'
+```
 
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg
 [npm-url]: https://npmjs.com/package/type-enforcer-math

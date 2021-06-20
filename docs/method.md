@@ -17,7 +17,29 @@
 > Enforce data types and remove common boilerplate code on class methods. Includes all the methods from [type-enforcer](https://github.com/DarrenPaulWright/type-enforcer).
 
 **Example**  
-``` javascriptimport { method } from 'type-enforcer-math';// Or import individual functionsimport { methodBoolean, methodString } from 'type-enforcer-math';// Use it as a prototype:const Thing = function() {};Thing.prototype.myMethod = method.string([options]);// or in a class:class Thing() {}Thing.prototype.myMethod = method.string([options]);// or as a non-prototype method:const Thing = function() {    this.myMethod = method.string([options]);};```
+``` javascript
+import { method } from 'type-enforcer-math';
+
+// Or import individual functions
+import { methodBoolean, methodString } from 'type-enforcer-math';
+
+// Use it as a prototype:
+const Thing = function() {};
+
+Thing.prototype.myMethod = method.string([options]);
+
+
+// or in a class:
+class Thing() {}
+
+Thing.prototype.myMethod = method.string([options]);
+
+
+// or as a non-prototype method:
+const Thing = function() {
+    this.myMethod = method.string([options]);
+};
+```
 
 * [method](#method) : <code>object</code>
     * [.point([options])](#method.point) ⇒ <code>function</code>
@@ -35,11 +57,11 @@
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| [options] | <code>Object</code> |  | Same as [method.any](method.any) with the following differences: |
+| [options] | <code>object</code> |  | Same as [method.any](method.any) with the following differences: |
 | [options.init] | <code>\*</code> | <code>Point</code> |  |
 | [options.enforce] | <code>function</code> | <code>enforce.point</code> |  |
 | [options.compare] | <code>function</code> | <code>Point.isSame</code> |  |
-| [options.coerce] | <code>Boolean</code> | <code>true</code> | If false then don't coerce the value |
+| [options.coerce] | <code>boolean</code> | <code>true</code> | If false then don't coerce the value |
 
 
 <br><a name="method.vector"></a>
@@ -53,11 +75,11 @@
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| [options] | <code>Object</code> |  | Same as [method.any](method.any) with the following differences: |
+| [options] | <code>object</code> |  | Same as [method.any](method.any) with the following differences: |
 | [options.init] | <code>\*</code> | <code>Vector</code> |  |
 | [options.enforce] | <code>function</code> | <code>enforce.vector</code> |  |
 | [options.compare] | <code>function</code> | <code>Vector.isSame</code> |  |
-| [options.coerce] | <code>Boolean</code> | <code>true</code> | If false then don't coerce the value |
+| [options.coerce] | <code>boolean</code> | <code>true</code> | If false then don't coerce the value |
 
 
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg
