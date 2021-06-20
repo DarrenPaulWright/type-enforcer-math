@@ -13,7 +13,7 @@ describe('firstDigit', () => {
 		[0.0000123, -4],
 		[1e4, 5],
 		[22346, 5],
-		[2.000, 1],
+		[2.000, 1], // eslint-disable-line unicorn/no-zero-fractions
 		[2.123, 1],
 		[9.999999, 1],
 		[10, 2],

@@ -22,9 +22,9 @@ import Point from '../Point.js';
  * @function enforce.point
  * @alias enforcePoint
  *
- * @arg {*} value
- * @arg {Point} alt - Returned if the value is not the correct type
- * @arg {Boolean} [coerce=false] - If true then coerce the value when possible
+ * @param {*} value
+ * @param {Point} alt - Returned if the value is not the correct type
+ * @param {boolean} [coerce=false] - If true then coerce the value when possible
  *
  * @returns {Point}
  */

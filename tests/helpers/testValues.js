@@ -1,13 +1,14 @@
 import { testTypes, testValues } from 'type-enforcer-test-helper';
-import { Point, Vector } from '../index.js';
+import { Point, Vector } from '../../index.js';
 
 const difference = (array1, ...args) => {
-	let diffArrays = [].concat(...args);
+	const diffArrays = [].concat(...args);
 	return array1.filter((item) => !diffArrays.includes(item));
 };
 
 export const validPoints = [new Point(1, 2), new Point([3, 4])];
-export const validVectors = [new Vector([1, 2], [3, 4]), new Vector([3, 4], [5, 6])];
+export const validVectors = [new Vector([1, 2], [3, 4]),
+	new Vector([3, 4], [5, 6])];
 
 validPoints.concat(validVectors)
 	.forEach((value) => {
@@ -35,7 +36,10 @@ export const vectorData = {
 	false: difference(testValues, validVectors),
 	coerceTrue: ['[[1,2],[3,4]]', [[1, 2], [3, 4]]],
 	coerceFalse: difference(testValues, validVectors)
-		.concat(['[[1,2],[3,4],[5,6]]', '[[1,2,7],[3,4,8]]', [[1, 2], [3, 4], [5, 6]], [[1, 2, 7], [3, 4, 8]]])
+		.concat(['[[1,2],[3,4],[5,6]]',
+			'[[1,2,7],[3,4,8]]',
+			[[1, 2], [3, 4], [5, 6]],
+			[[1, 2, 7], [3, 4, 8]]])
 };
 
 export const localTestTypes = [pointData, vectorData];

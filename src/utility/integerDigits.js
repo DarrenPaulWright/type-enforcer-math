@@ -5,6 +5,8 @@ import firstDigit from './firstDigit.js';
  *
  * @function integerDigits
  *
- * @arg {Number} value
+ * @param {number} value - The number to check.
+ *
+ * @returns {number.int}
  */
 export default (value) => Math.max(0, firstDigit(value));

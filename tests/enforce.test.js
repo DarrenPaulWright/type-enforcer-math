@@ -1,6 +1,12 @@
 import { testEnforce } from 'type-enforcer-test-helper';
-import { enforce, enforcePoint, enforceVector, Point, Vector } from '../index.js';
-import { pointData, vectorData } from './testValues.js';
+import {
+	enforce,
+	enforcePoint,
+	enforceVector,
+	Point,
+	Vector
+} from '../index.js';
+import { pointData, vectorData } from './helpers/testValues.js';
 
 describe('enforce', () => {
 	describe('.point', () => {

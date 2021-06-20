@@ -1,7 +1,7 @@
 import { assert } from 'type-enforcer';
 import { multiTest } from 'type-enforcer-test-helper';
 import { Point } from '../index.js';
-import { pointData } from './testValues.js';
+import { pointData } from './helpers/testValues.js';
 
 describe('Point', () => {
 	describe('Init', () => {

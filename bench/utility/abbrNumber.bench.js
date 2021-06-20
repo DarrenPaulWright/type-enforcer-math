@@ -1,8 +1,9 @@
 import { benchSettings } from 'karma-webpack-bundle';
 import { abbrNumber } from '../../index.js';
 
+/* eslint-disable no-unused-vars */
 suite('abbrNumber', () => {
-	let sandbox;
+	let sandbox = null;
 
 	benchmark('0', () => {
 		sandbox = abbrNumber(0);
@@ -17,10 +18,10 @@ suite('abbrNumber', () => {
 	}, benchSettings);
 
 	benchmark('precision 3', () => {
-		sandbox = abbrNumber(123456.123456, {precision: 3});
+		sandbox = abbrNumber(123456.123456, { precision: 3 });
 	}, benchSettings);
 
 	benchmark('with suffix', () => {
-		sandbox = abbrNumber(123456.123456, {suffix: 's'});
+		sandbox = abbrNumber(123456.123456, { suffix: 's' });
 	}, benchSettings);
 });

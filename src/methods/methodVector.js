@@ -9,11 +9,11 @@ import methodPoint from './methodPoint.js';
  * @extends method.any
  * @alias methodVector
  *
- * @arg {Object} [options] - Same as {@link method.any} with the following differences:
- * @arg {*} [options.init=Vector]
- * @arg {Function} [options.enforce=enforce.vector]
- * @arg {Function} [options.compare=Vector.isSame]
- * @arg {Boolean} [options.coerce=true] - If false then don't coerce the value
+ * @param {object} [options] - Same as {@link method.any} with the following differences:
+ * @param {*} [options.init=Vector]
+ * @param {Function} [options.enforce=enforce.vector]
+ * @param {Function} [options.compare=Vector.isSame]
+ * @param {boolean} [options.coerce=true] - If false then don't coerce the value
  *
  * @returns {Function}
  */

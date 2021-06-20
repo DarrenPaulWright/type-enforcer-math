@@ -43,15 +43,16 @@ const metricPrefixLetters = {
 
 /**
  * Abbreviates a number in a human readable format.
+ *
  * @see https://en.wikipedia.org/wiki/Metric_prefix
  *
  * @function abbrNumber
  *
- * @param {Number} value
- * @param {Object} [settings]
- * @param {Number} [settings.precision=2] - passed to round()
- * @param {Object} [settings.prefix] - An object of unit name prefixes to use when shortening numbers. {'-8': 'y', '-7': 'z', ... '-1': 'm', '0': '', '1': 'k', ... '7': 'Z', '8': 'Y'}. The default prefixes are single character symbols like 'k' and 'μ' while full prefix names are provided via the separately exported "metricPrefixNames"
- * @param {String} [settings.suffix=''] - Appended after the prefix
+ * @param {number} value - The number to abbreviate.
+ * @param {object} [settings] - Setting object.
+ * @param {number} [settings.precision=2] - Passed to round().
+ * @param {object} [settings.prefix] - An object of unit name prefixes to use when shortening numbers. {'-8': 'y', '-7': 'z', ... '-1': 'm', '0': '', '1': 'k', ... '7': 'Z', '8': 'Y'}. The default prefixes are single character symbols like 'k' and 'μ' while full prefix names are provided via the separately exported "metricPrefixNames".
+ * @param {string} [settings.suffix=''] - Appended after the prefix.
  *
  * @returns {string}
  */
@@ -74,4 +75,4 @@ export default (value, settings = {}) => {
 	}
 
 	return value + (settings.prefix || metricPrefixLetters)[exp] + (settings.suffix || '');
-}
+};

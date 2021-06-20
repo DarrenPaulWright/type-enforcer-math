@@ -1,7 +1,7 @@
 import { assert } from 'type-enforcer';
 import { multiTest } from 'type-enforcer-test-helper';
 import { Point, Vector } from '../index.js';
-import { vectorData } from './testValues.js';
+import { vectorData } from './helpers/testValues.js';
 
 describe('Vector', () => {
 	describe('init', () => {
@@ -356,7 +356,8 @@ describe('Vector', () => {
 		});
 
 		it('should return a string of the vector if custom', () => {
-			assert.equal(new Vector([1, 2], [3, 4]).valueOf(), [[1, 2], [3, 4]]);
+			assert.equal(new Vector([1, 2], [3, 4]).valueOf(), [[1, 2],
+				[3, 4]]);
 		});
 	});
 
@@ -365,10 +366,12 @@ describe('Vector', () => {
 			assert.is(new Vector([1, 2], [3, 4]).isSame('something'), false);
 		});
 		it('should return true if the same Vector', () => {
-			assert.is(new Vector([1, 2], [3, 4]).isSame(new Vector([1, 2], [3, 4])), true);
+			assert.is(new Vector([1, 2], [3, 4]).isSame(new Vector([1, 2], [3,
+				4])), true);
 		});
 		it('should return false if a different Vector', () => {
-			assert.is(new Vector([1, 2], [3, 4]).isSame(new Vector([5, 2], [3, 4])), false);
+			assert.is(new Vector([1, 2], [3, 4]).isSame(new Vector([5, 2], [3,
+				4])), false);
 		});
 	});
 });

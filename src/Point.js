@@ -33,8 +33,8 @@ const validify = (x, y) => isFloat(x, true) && isFloat(y, true);
  * // => 6
  * ```
  *
- * @arg {Number|Array|Object} [x=0]
- * @arg {Number} [y=0]
+ * @param {number | Array | object} [x=0]
+ * @param {number} [y=0]
  */
 export default class Point {
 	constructor(x, y) {
@@ -42,46 +42,47 @@ export default class Point {
 	}
 
 	/**
-	 * Determine if something is a valid point
+	 * Determine if something is a valid point.
 	 *
 	 * @memberOf Point
 	 *
-	 * @arg {*} value
+	 * @param {*} value - The value to check.
 	 *
 	 * @returns {boolean}
 	 */
 	static isValid(value) {
 		return value instanceof Point ||
 			(isString(value) &&
-				value.indexOf(SEPARATOR) !== -1 &&
+				value.includes(SEPARATOR) &&
 				validify(value.slice(value.indexOf(SEPARATOR) + 1), value.slice(0, value.indexOf(SEPARATOR)))) ||
 			(isArray(value) &&
 				value.length === 2 &&
 				validify(value[0], value[1])) ||
-			Boolean(value) && validify(value.x, value.y);
+			(Boolean(value) && validify(value.x, value.y));
 	}
 
 	/**
-	 * Returns the same angle between 0 and 2 * PI
+	 * Returns the same angle between 0 and 2 * PI.
 	 *
 	 * @memberOf Point
 	 *
-	 * @arg {Number} angle
+	 * @param {number} angle - The angle to normalize.
 	 *
-	 * @returns {Number} - The normalized angle
+	 * @returns {number} - The normalized angle.
 	 */
 	static normalizeAngle(angle) {
-		return angle % TWO_PI + (angle < 0 ? TWO_PI : 0);
+		return (angle % TWO_PI) + (angle < 0 ? TWO_PI : 0);
 	}
 
 	/**
-	 * Set x and y
+	 * Set x and y.
 	 *
 	 * @memberOf Point
 	 * @instance
+	 * @chainable
 	 *
-	 * @arg {Number} x
-	 * @arg {Number} y
+	 * @param {number|string|Array|object|Point} x - The x coordinate as a number (must also provide y param), or a comma separated string as 'x,y', or an Array as [x, y], or an object as { x: 0, y: 0 }, or another valid Point.
+	 * @param {number} [y] - The y coordinate as a number.
 	 *
 	 * @returns {this}
 	 */
@@ -108,32 +109,40 @@ export default class Point {
 	}
 
 	/**
-	 * Get the point as a string with an optional suffix
+	 * Get the point as a string with an optional suffix.
 	 *
 	 * @memberOf Point
 	 * @instance
 	 *
-	 * @arg {String} [suffix]
+	 * @param {string} [suffix] - A suffix to append to each coordinate.
 	 *
-	 * @returns {String}
+	 * @returns {string}
 	 */
 	toString(suffix = '') {
 		return this.x + suffix + SEPARATOR + this.y + suffix;
 	}
 
+	/**
+	 * Get the value of the point as an array.
+	 *
+	 * @memberOf Point
+	 * @instance
+	 *
+	 * @returns {Array}
+	 */
 	valueOf() {
 		return [this.x, this.y];
 	}
 
 	/**
-	 * Determine if another point is the same as this one
+	 * Determine if another point is the same as this one.
 	 *
 	 * @memberOf Point
 	 * @instance
 	 *
-	 * @arg {Point} point2
+	 * @param {Point} point2 - Another point.
 	 *
-	 * @returns {Boolean}
+	 * @returns {boolean}
 	 */
 	isSame(point2) {
 		return point2 instanceof Point ?
@@ -142,12 +151,12 @@ export default class Point {
 	}
 
 	/**
-	 * Adds the coordinates of another point to this one and returns a new point
+	 * Adds the coordinates of another point to this one and returns a new point.
 	 *
 	 * @memberOf Point
 	 * @instance
 	 *
-	 * @arg {Point} point
+	 * @param {Point} point - Another point.
 	 *
 	 * @returns {Point}
 	 */
@@ -156,12 +165,12 @@ export default class Point {
 	}
 
 	/**
-	 * Subtracts the coordinates of another point from this one and returns a new point
+	 * Subtracts the coordinates of another point from this one and returns a new point.
 	 *
 	 * @memberOf Point
 	 * @instance
 	 *
-	 * @arg {Point} point
+	 * @param {Point} point - Another point.
 	 *
 	 * @returns {Point}
 	 */
@@ -170,12 +179,12 @@ export default class Point {
 	}
 
 	/**
-	 * Multiplies the coordinates of another point with this one and returns a new point
+	 * Multiplies the coordinates of another point with this one and returns a new point.
 	 *
 	 * @memberOf Point
 	 * @instance
 	 *
-	 * @arg {Point} point
+	 * @param {Point} point - Another point.
 	 *
 	 * @returns {Point}
 	 */
@@ -184,13 +193,13 @@ export default class Point {
 	}
 
 	/**
-	 * Rounds the coordinates of this point and returns a new point
+	 * Rounds the coordinates of this point and returns a new point.
 	 *
 	 * @memberOf Point
 	 * @instance
 	 *
-	 * @arg {int} [fractionDigits=0] - Must be a positive integer or null
-	 * @arg {int} [precision] - Significant digits
+	 * @param {number.int} [fractionDigits=0] - Must be a positive integer or null.
+	 * @param {number.int} [precision] - Significant digits.
 	 *
 	 * @returns {Point}
 	 */
@@ -199,54 +208,54 @@ export default class Point {
 	}
 
 	/**
-	 * Finds the distance from point to origin
+	 * Finds the distance from point to origin (0, 0). Always returns a positive number or 0.
 	 *
 	 * @memberOf Point
 	 * @instance
 	 *
-	 * @returns {Number}
+	 * @returns {number}
 	 */
 	distance() {
 		return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
 	}
 
 	/**
-	 * Finds the angle to this point from origin
+	 * Finds the angle to this point from origin.
 	 *
 	 * @memberOf Point
 	 * @instance
 	 *
-	 * @returns {Boolean}
+	 * @returns {number}
 	 */
 	angle() {
 		return Point.normalizeAngle(Math.atan2(this.y, this.x));
 	}
 
 	/**
-	 * Returns a new point at a specific angle and distance from this point
+	 * Returns a new point at a specific angle and distance from this point.
 	 *
 	 * @memberOf Point
 	 * @instance
 	 *
-	 * @arg {Number} angle
-	 * @arg {Number} distance
+	 * @param {number} angle - The angle.
+	 * @param {number} distance - The distance.
 	 *
-	 * @returns {Boolean}
+	 * @returns {Point}
 	 */
 	pointAtDistance(angle, distance) {
 		return new Point(
-			this.x + Math.cos(angle) * distance,
-			this.y + Math.sin(angle) * distance
+			this.x + (Math.cos(angle) * distance),
+			this.y + (Math.sin(angle) * distance)
 		);
 	}
 
 	/**
-	 * Get a clone of this point
+	 * Get a clone of this point.
 	 *
 	 * @memberOf Point
 	 * @instance
 	 *
-	 * @returns {Boolean}
+	 * @returns {Point}
 	 */
 	clone() {
 		return new Point(this.x, this.y);

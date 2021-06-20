@@ -1,7 +1,8 @@
 import { benchSettings } from 'karma-webpack-bundle';
 import { is } from '../index.js';
-import { localTestTypes } from '../tests/testValues.js';
+import { localTestTypes } from '../tests/helpers/testValues.js';
 
+/* eslint-disable no-unused-vars */
 localTestTypes.forEach((data) => {
 	suite(`is.${data.name}`, () => {
 		const check = is[data.name];
@@ -9,24 +10,24 @@ localTestTypes.forEach((data) => {
 		const falseValue = data.false[0];
 		const coerceTrueValue = data.coerceTrue[0];
 		const coerceFalseValue = data.coerceFalse[0];
-		let sandbox;
+		let sandbox = null;
 
-		benchmark(`true`, () => {
+		benchmark('true', () => {
 			sandbox = check(trueValue);
 		}, benchSettings);
 
-		benchmark(`false`, () => {
+		benchmark('false', () => {
 			sandbox = check(falseValue);
 		}, benchSettings);
 
-		if (data.coerceTrue.length) {
-			benchmark(`coerce true`, () => {
+		if (data.coerceTrue.length !== 0) {
+			benchmark('coerce true', () => {
 				sandbox = check(coerceTrueValue, true);
 			}, benchSettings);
 		}
 
-		if (data.coerceFalse.length) {
-			benchmark(`coerce false`, () => {
+		if (data.coerceFalse.length !== 0) {
+			benchmark('coerce false', () => {
 				sandbox = check(coerceFalseValue, true);
 			}, benchSettings);
 		}

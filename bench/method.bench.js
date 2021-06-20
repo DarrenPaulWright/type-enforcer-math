@@ -2,8 +2,9 @@ import { benchSettings } from 'karma-webpack-bundle';
 import { forOwn } from 'object-agent';
 import { methodPoint } from '../index.js';
 
-suite(`methodPoint`, () => {
-	let sandbox;
+/* eslint-disable no-unused-vars */
+suite('methodPoint', () => {
+	let sandbox = null;
 
 	forOwn({
 		none: null,
@@ -46,7 +47,7 @@ suite(`methodPoint`, () => {
 
 		Widget.prototype[key] = methodPoint(value);
 
-		let widget = new Widget();
+		const widget = new Widget();
 
 		benchmark(`${key} init`, () => {
 			methodPoint(value);

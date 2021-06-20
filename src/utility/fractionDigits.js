@@ -7,7 +7,9 @@ const PERFORMANCE_CUTOFF = 1e-35;
  *
  * @function fractionDigits
  *
- * @arg {Number} value
+ * @param {number} value - The number to check.
+ *
+ * @returns {number.int}
  */
 export default (value) => {
 	if (!isFloat(value) || value === 0) {
@@ -20,14 +22,15 @@ export default (value) => {
 		return value.slice(value.indexOf('e') + 1) * -1;
 	}
 
-	let e = 1;
+	let multiplier = 1;
 	let digits = 0;
-	let comp = value * e;
+	let comp = value * multiplier;
 
 	while (Math.floor(comp) !== comp) {
 		++digits;
-		comp = value * (e *= 10);
+		multiplier *= 10;
+		comp = value * multiplier;
 	}
 
 	return digits;
-}
+};

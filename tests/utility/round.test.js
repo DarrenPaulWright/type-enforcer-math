@@ -44,5 +44,4 @@ describe('round', () => {
 		assert.is(round(0.123456789, 6, 6), 0.123457);
 		assert.is(round(0.123456789, 3, 6), 0.123);
 	});
-
 });

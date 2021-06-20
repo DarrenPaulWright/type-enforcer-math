@@ -7,7 +7,7 @@ describe('fractionDigits', () => {
 		[Infinity, 0],
 		[0, 0],
 		[22346, 0],
-		[2.000, 0],
+		[2.000, 0], // eslint-disable-line unicorn/no-zero-fractions
 		[2.123, 3],
 		[2.123456, 6],
 		[123.1234567891, 10],

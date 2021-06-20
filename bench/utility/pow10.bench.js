@@ -2,31 +2,32 @@ import { benchSettings } from 'karma-webpack-bundle';
 import { repeat } from 'object-agent';
 import { pow10 } from '../../index.js';
 
+/* eslint-disable no-unused-vars */
 suite('power', () => {
-	let sandbox;
+	let sandbox = null;
 	const times = 12;
 
-	repeat(times, (num) => {
-		num *= num;
+	repeat(times, (number) => {
+		number *= number;
 
-		benchmark('Math.pow ' + num, () => {
-			sandbox = Math.pow(10, num);
+		benchmark('Math.pow ' + number, () => {
+			sandbox = Math.pow(10, number);
 		}, benchSettings);
 
-		benchmark('Math.pow ' + -num, () => {
-			sandbox = Math.pow(10, -num);
+		benchmark('Math.pow ' + -number, () => {
+			sandbox = Math.pow(10, -number);
 		}, benchSettings);
 	});
 
-	repeat(times, (num) => {
-		num *= num;
+	repeat(times, (number) => {
+		number *= number;
 
-		benchmark('pow10 ' + num, () => {
-			sandbox = pow10(num);
+		benchmark('pow10 ' + number, () => {
+			sandbox = pow10(number);
 		}, benchSettings);
 
-		benchmark('pow10 ' + -num, () => {
-			sandbox = pow10(-num);
+		benchmark('pow10 ' + -number, () => {
+			sandbox = pow10(-number);
 		}, benchSettings);
 	});
 });

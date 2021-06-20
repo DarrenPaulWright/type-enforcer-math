@@ -1,8 +1,9 @@
 import { benchSettings } from 'karma-webpack-bundle';
 import { integerDigits } from '../../index.js';
 
+/* eslint-disable no-unused-vars */
 suite('integerDigits', () => {
-	let sandbox;
+	let sandbox = null;
 
 	benchmark('infinity', () => {
 		sandbox = integerDigits(Infinity);

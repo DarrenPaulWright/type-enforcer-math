@@ -1,4 +1,10 @@
-import { enforceNumber, isArray, isString, methodNumber, PrivateVars } from 'type-enforcer';
+import {
+	enforceNumber,
+	isArray,
+	isString,
+	methodNumber,
+	PrivateVars
+} from 'type-enforcer';
 import enforcePoint from './enforcer/enforcePoint.js';
 import methodPoint from './methods/methodPoint.js';
 import Point from './Point.js';
@@ -13,7 +19,7 @@ const _ = new PrivateVars();
  * import { Vector } from 'type-enforcer-math';
  * ```
  *
- * @arg {*} [args] - Accepts:
+ * @param {*} [args] - Accepts:
  * <br>- A start and end point (or values that can be coerced into points)
  * <br>- An array of two points (or values that can be coerced into points)
  * <br>- Another vector instance
@@ -45,29 +51,29 @@ export default class Vector {
 	}
 
 	/**
-	 * Determine if a value is a Vector or can be coerced into a vector
+	 * Determine if a value is a Vector or can be coerced into a vector.
 	 *
 	 * @memberOf Vector
 	 *
-	 * @arg {*} value
+	 * @param {*} value - The value to check.
 	 *
 	 * @returns {boolean}
 	 */
 	static isValid(value) {
 		return value instanceof Vector ||
-			isString(value) && Point.isValid(value.slice(2, value.indexOf(']'))) && Point.isValid(value.slice(value.indexOf(']') + 3, -2)) ||
-			isArray(value) && value.length === 2 && Point.isValid(value[0]) && Point.isValid(value[1]);
+			(isString(value) && Point.isValid(value.slice(2, value.indexOf(']'))) && Point.isValid(value.slice(value.indexOf(']') + 3, -2))) ||
+			(isArray(value) && value.length === 2 && Point.isValid(value[0]) && Point.isValid(value[1]));
 	}
 
 	/**
-	 * Determine if another vector is the same as this one
+	 * Determine if another vector is the same as this one.
 	 *
 	 * @memberOf Vector
 	 * @instance
 	 *
-	 * @arg {Vector} vector2
+	 * @param {Vector} vector2 - Another vector.
 	 *
-	 * @returns {Boolean}
+	 * @returns {boolean}
 	 */
 	isSame(vector2) {
 		return vector2 instanceof Vector &&
@@ -76,10 +82,13 @@ export default class Vector {
 	}
 
 	/**
-	 * Switch the start and end points
+	 * Switch the start and end points.
 	 *
 	 * @memberOf Vector
 	 * @instance
+	 * @chainable
+	 *
+	 * @returns {this}
 	 */
 	invert() {
 		[_(this).start, _(this).end] = [_(this).end, _(this).start];
@@ -90,20 +99,27 @@ export default class Vector {
 	}
 
 	/**
-	 * Get a string representation of the value of the vector
+	 * Get a string representation of the value of the vector.
 	 *
 	 * @memberOf Vector
 	 * @instance
+	 *
+	 * @returns {string}
 	 */
 	toString() {
-		return '[[' + _(this).start.toString() + '],[' + _(this).end.toString() + ']]';
+		const start = _(this).start.toString();
+		const end = _(this).end.toString();
+
+		return '[[' + start + '],[' + end + ']]';
 	}
 
 	/**
-	 * Returns an array with the values of the start and end points
+	 * Returns an array with the values of the start and end points.
 	 *
 	 * @memberOf Vector
 	 * @instance
+	 *
+	 * @returns {Array}
 	 */
 	valueOf() {
 		return [_(this).start.valueOf(), _(this).end.valueOf()];
@@ -119,7 +135,7 @@ Object.assign(Vector.prototype, {
 	 * @instance
 	 * @chainable
 	 *
-	 * @arg {Point} [point]
+	 * @param {Point} [point]
 	 *
 	 * @returns {Point}
 	 */
@@ -142,7 +158,7 @@ Object.assign(Vector.prototype, {
 	 * @instance
 	 * @chainable
 	 *
-	 * @arg {Point} [point]
+	 * @param {Point} [point]
 	 *
 	 * @returns {Point}
 	 */
@@ -165,17 +181,23 @@ Object.assign(Vector.prototype, {
 	 * @instance
 	 * @chainable
 	 *
-	 * @arg {Number} [length]
+	 * @param {number} [length]
 	 *
-	 * @returns {Number}
+	 * @returns {number}
 	 */
 	length: methodNumber({
 		set(length) {
-			_(this).end = _(this).start.pointAtDistance(this.angle(), _(this).length = length);
+			_(this).end = _(this)
+				.start
+				.pointAtDistance(this.angle(), _(this).length = length);
 			_(this).offset = null;
 		},
 		get() {
-			return _(this).length || (_(this).length = _(this).end.subtract(_(this).start).distance());
+			// eslint-disable-next-line unicorn/explicit-length-check
+			return _(this).length || (_(this).length = _(this)
+				.end
+				.subtract(_(this).start)
+				.distance());
 		}
 	}),
 	/**
@@ -186,20 +208,25 @@ Object.assign(Vector.prototype, {
 	 * @instance
 	 * @chainable
 	 *
-	 * @arg {Number} [angle]
+	 * @param {number} [angle]
 	 *
-	 * @returns {Number}
+	 * @returns {number}
 	 */
 	angle: methodNumber({
 		enforce(newValue, oldValue) {
 			return Point.normalizeAngle(enforceNumber(newValue, oldValue));
 		},
 		set(angle) {
-			_(this).end = _(this).start.pointAtDistance(_(this).angle = angle, this.length());
+			_(this).end = _(this)
+				.start
+				.pointAtDistance(_(this).angle = angle, this.length());
 			_(this).offset = null;
 		},
 		get() {
-			return _(this).angle || (_(this).angle = _(this).end.subtract(_(this).start).angle());
+			return _(this).angle || (_(this).angle = _(this)
+				.end
+				.subtract(_(this).start)
+				.angle());
 		}
 	}),
 	/**
@@ -210,7 +237,7 @@ Object.assign(Vector.prototype, {
 	 * @instance
 	 * @chainable
 	 *
-	 * @arg {Point} [point]
+	 * @param {Point} [point]
 	 *
 	 * @returns {Point}
 	 */
@@ -224,7 +251,9 @@ Object.assign(Vector.prototype, {
 			});
 		},
 		get() {
-			return _(this).offset || (_(this).offset = _(this).end.subtract(_(this).start));
+			return _(this).offset || (_(this).offset = _(this)
+				.end
+				.subtract(_(this).start));
 		}
 	})
 });

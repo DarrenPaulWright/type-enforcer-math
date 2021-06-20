@@ -1,3 +1,4 @@
+/* eslint-disable import/export */
 /**
  * @name Installation
  * @private
@@ -34,4 +35,6 @@ export { default as fractionDigits } from './src/utility/fractionDigits.js';
 export { default as integerDigits } from './src/utility/integerDigits.js';
 export { default as pow10 } from './src/utility/pow10.js';
 export { default as round } from './src/utility/round.js';
-export { default as abbrNumber, metricPrefixNames } from './src/utility/abbrNumber.js';
+export {
+	default as abbrNumber, metricPrefixNames
+} from './src/utility/abbrNumber.js';

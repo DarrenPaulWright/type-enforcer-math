@@ -74,7 +74,7 @@ describe('abbrNumber', () => {
 				});
 			}
 
-			let settings = {
+			const settings = {
 				...data[2] || {},
 				suffix: 's'
 			};

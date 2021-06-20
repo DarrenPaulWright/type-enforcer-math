@@ -1,9 +1,9 @@
 import { benchSettings } from 'karma-webpack-bundle';
 import { round } from '../../index.js';
-import { pow10 } from '../../src/utility/round.js';
 
+/* eslint-disable no-unused-vars */
 suite('round', () => {
-	let sandbox;
+	let sandbox = null;
 
 	benchmark('123.123', () => {
 		sandbox = round(123.123);

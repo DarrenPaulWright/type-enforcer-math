@@ -1,6 +1,6 @@
 import { testMethod } from 'type-enforcer-test-helper';
 import { method, methodPoint, methodVector, Point, Vector } from '../index.js';
-import { pointData, vectorData } from './testValues.js';
+import { pointData, vectorData } from './helpers/testValues.js';
 
 describe('method', () => {
 	describe('.point', () => {

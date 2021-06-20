@@ -1,14 +1,15 @@
 import { benchSettings } from 'karma-webpack-bundle';
 import { Point } from '../index.js';
 
+/* eslint-disable no-unused-vars */
 suite('Point', () => {
-	let sandbox;
-	let point;
-	let point2;
+	let sandbox = null;
+	let point = {};
+	let point2 = {};
 
 	const validString = '1,2';
 	const validArray = [1, 2];
-	const validObject = {x: 1, y: 2};
+	const validObject = { x: 1, y: 2 };
 
 	benchmark('init default', () => {
 		sandbox = new Point();

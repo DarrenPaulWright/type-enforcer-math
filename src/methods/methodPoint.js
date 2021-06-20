@@ -9,11 +9,11 @@ import Point from '../Point.js';
  * @extends method.any
  * @alias methodPoint
  *
- * @arg {Object} [options] - Same as {@link method.any} with the following differences:
- * @arg {*} [options.init=Point]
- * @arg {Function} [options.enforce=enforce.point]
- * @arg {Function} [options.compare=Point.isSame]
- * @arg {Boolean} [options.coerce=true] - If false then don't coerce the value
+ * @param {object} [options] - Same as {@link method.any} with the following differences:
+ * @param {*} [options.init=Point]
+ * @param {Function} [options.enforce=enforce.point]
+ * @param {Function} [options.compare=Point.isSame]
+ * @param {boolean} [options.coerce=true] - If false then don't coerce the value
  *
  * @returns {Function}
  */
@@ -24,8 +24,8 @@ export default methodAny.extend({
 	},
 	compare(newValue, oldValue) {
 		return oldValue && oldValue.isSame ? !oldValue.isSame(newValue) :
-			newValue && newValue.isSame ? !newValue.isSame(oldValue) :
-				!sameValueZero(newValue, oldValue);
+			(newValue && newValue.isSame ? !newValue.isSame(oldValue) :
+				!sameValueZero(newValue, oldValue));
 	},
 	coerce: true
 });

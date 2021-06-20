@@ -1,11 +1,11 @@
 /**
- * Performance optimized version of Math.pow(10, n) for integers (up to 2x improvement for certain values)
+ * Performance optimized version of Math.pow(10, n) for integers (up to 2x improvement for certain values).
  *
  * @function pow10
  *
- * @arg {int} n - Must be an int!
+ * @param {number.int} n - Must be an int.
  *
- * @returns {int}
+ * @returns {number.int}
  */
 export default (n) => {
 	if (n > 100 || n < -25) {
