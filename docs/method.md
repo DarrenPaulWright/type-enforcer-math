@@ -58,7 +58,7 @@ const Thing = function() {
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [options] | <code>object</code> |  | Same as [method.any](method.any) with the following differences: |
-| [options.init] | <code>\*</code> | <code>Point</code> |  |
+| [options.init] | <code>unknown</code> | <code>Point</code> |  |
 | [options.enforce] | <code>function</code> | <code>enforce.point</code> |  |
 | [options.compare] | <code>function</code> | <code>Point.isSame</code> |  |
 | [options.coerce] | <code>boolean</code> | <code>true</code> | If false then don't coerce the value |
@@ -76,7 +76,7 @@ const Thing = function() {
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [options] | <code>object</code> |  | Same as [method.any](method.any) with the following differences: |
-| [options.init] | <code>\*</code> | <code>Vector</code> |  |
+| [options.init] | <code>unknown</code> | <code>Vector</code> |  |
 | [options.enforce] | <code>function</code> | <code>enforce.vector</code> |  |
 | [options.compare] | <code>function</code> | <code>Vector.isSame</code> |  |
 | [options.coerce] | <code>boolean</code> | <code>true</code> | If false then don't coerce the value |

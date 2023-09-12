@@ -39,7 +39,7 @@ import { isBoolean, isString } from 'type-enforcer-math';
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| value | <code>\*</code> |  |  |
+| value | <code>unknown</code> |  |  |
 | [coerce] | <code>boolean</code> | <code>false</code> | If true then see if the value can be coerced into a Point |
 
 **Example**  
@@ -66,7 +66,7 @@ isPoint('1,2', true);
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| value | <code>\*</code> |  |  |
+| value | <code>unknown</code> |  |  |
 | [coerce] | <code>boolean</code> | <code>false</code> | If true then see if the value can be coerced into a Vector |
 
 **Example**  

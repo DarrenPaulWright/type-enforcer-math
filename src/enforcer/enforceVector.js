@@ -22,7 +22,7 @@ import Vector from '../Vector.js';
  * @function enforce.vector
  * @alias enforceVector
  *
- * @param {*} value
+ * @param {unknown} value
  * @param {Vector}  alt - Returned if the value is not the correct type
  * @param {boolean} [coerce=false] - If true then coerce the value when possible
  *

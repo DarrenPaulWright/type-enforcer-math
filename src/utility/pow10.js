@@ -3,9 +3,9 @@
  *
  * @function pow10
  *
- * @param {number.int} n - Must be an int.
+ * @param {number} n - Must be an int.
  *
- * @returns {number.int}
+ * @returns {number}
  */
 export default (n) => {
 	if (n > 100 || n < -25) {

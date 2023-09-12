@@ -30,7 +30,7 @@ const customTypeCheck = (Type) => {
  * @function is.point
  * @alias isPoint
  *
- * @param {*} value
+ * @param {unknown} value
  * @param {boolean} [coerce=false] - If true then see if the value can be coerced into a Point
  *
  * @returns {boolean}

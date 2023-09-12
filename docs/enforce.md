@@ -39,7 +39,7 @@ import { enforceBoolean, enforceString } from 'type-enforcer-math';
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| value | <code>\*</code> |  |  |
+| value | <code>unknown</code> |  |  |
 | alt | <code>Point</code> |  | Returned if the value is not the correct type |
 | [coerce] | <code>boolean</code> | <code>false</code> | If true then coerce the value when possible |
 
@@ -67,7 +67,7 @@ enforce.point('1,2', new Point(), true);
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| value | <code>\*</code> |  |  |
+| value | <code>unknown</code> |  |  |
 | alt | <code>Vector</code> |  | Returned if the value is not the correct type |
 | [coerce] | <code>boolean</code> | <code>false</code> | If true then coerce the value when possible |
 

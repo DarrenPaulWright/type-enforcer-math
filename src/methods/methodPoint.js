@@ -10,7 +10,7 @@ import Point from '../Point.js';
  * @alias methodPoint
  *
  * @param {object} [options] - Same as {@link method.any} with the following differences:
- * @param {*} [options.init=Point]
+ * @param {unknown} [options.init=Point]
  * @param {Function} [options.enforce=enforce.point]
  * @param {Function} [options.compare=Point.isSame]
  * @param {boolean} [options.coerce=true] - If false then don't coerce the value

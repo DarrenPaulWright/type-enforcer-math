@@ -7,6 +7,6 @@ import firstDigit from './firstDigit.js';
  *
  * @param {number} value - The number to check.
  *
- * @returns {number.int}
+ * @returns {number}
  */
 export default (value) => Math.max(0, firstDigit(value));

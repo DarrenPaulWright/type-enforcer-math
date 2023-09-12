@@ -13,7 +13,7 @@
 
 <br><a name="fractionDigits"></a>
 
-## fractionDigits(value) ⇒ <code>number.int</code>
+## fractionDigits(value) ⇒ <code>number</code>
 > Gets the number of digits to the right of the decimal point.
 
 

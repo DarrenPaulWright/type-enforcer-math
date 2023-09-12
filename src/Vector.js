@@ -1,10 +1,4 @@
-import {
-	enforceNumber,
-	isArray,
-	isString,
-	methodNumber,
-	PrivateVars
-} from 'type-enforcer';
+import { enforceNumber, isArray, isString, methodNumber, PrivateVars } from 'type-enforcer';
 import enforcePoint from './enforcer/enforcePoint.js';
 import methodPoint from './methods/methodPoint.js';
 import Point from './Point.js';
@@ -19,7 +13,7 @@ const _ = new PrivateVars();
  * import { Vector } from 'type-enforcer-math';
  * ```
  *
- * @param {*} [args] - Accepts:
+ * @param {unknown} [args] - Accepts:
  * <br>- A start and end point (or values that can be coerced into points)
  * <br>- An array of two points (or values that can be coerced into points)
  * <br>- Another vector instance
@@ -55,7 +49,7 @@ export default class Vector {
 	 *
 	 * @memberOf Vector
 	 *
-	 * @param {*} value - The value to check.
+	 * @param {unknown} value - The value to check.
 	 *
 	 * @returns {boolean}
 	 */

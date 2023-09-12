@@ -46,7 +46,7 @@ export default class Point {
 	 *
 	 * @memberOf Point
 	 *
-	 * @param {*} value - The value to check.
+	 * @param {unknown} value - The value to check.
 	 *
 	 * @returns {boolean}
 	 */
@@ -198,8 +198,8 @@ export default class Point {
 	 * @memberOf Point
 	 * @instance
 	 *
-	 * @param {number.int} [fractionDigits=0] - Must be a positive integer or null.
-	 * @param {number.int} [precision] - Significant digits.
+	 * @param {number} [fractionDigits=0] - Must be a positive integer or null.
+	 * @param {number} [precision] - Significant digits.
 	 *
 	 * @returns {Point}
 	 */

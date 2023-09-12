@@ -9,7 +9,7 @@ const PERFORMANCE_CUTOFF = 1e-35;
  *
  * @param {number} value - The number to check.
  *
- * @returns {number.int}
+ * @returns {number}
  */
 export default (value) => {
 	if (!isFloat(value) || value === 0) {

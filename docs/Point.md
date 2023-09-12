@@ -153,8 +153,8 @@ console.log(point4.y);
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| [fractionDigits] | <code>number.int</code> | <code>0</code> | Must be a positive integer or null. |
-| [precision] | <code>number.int</code> |  | Significant digits. |
+| [fractionDigits] | <code>number</code> | <code>0</code> | Must be a positive integer or null. |
+| [precision] | <code>number</code> |  | Significant digits. |
 
 
 <br><a name="Point+distance"></a>
@@ -195,7 +195,7 @@ console.log(point4.y);
 
 | Param | Type | Description |
 | --- | --- | --- |
-| value | <code>\*</code> | The value to check. |
+| value | <code>unknown</code> | The value to check. |
 
 
 <br><a name="Point.normalizeAngle"></a>

@@ -7,10 +7,10 @@ import pow10 from './pow10.js';
  * @function round
  *
  * @param {number} value - The number to be rounded.
- * @param {number.int} [fractionDigits=0] - Must be a positive integer or null.
- * @param {number.int} [precision=0] - Significant digits.
+ * @param {number} [fractionDigits=0] - Must be a positive integer or null.
+ * @param {number} [precision=0] - Significant digits.
  *
- * @returns {number.int}
+ * @returns {number}
  */
 export default (value, fractionDigits = 0, precision = 0) => {
 	if (precision !== 0) {

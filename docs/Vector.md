@@ -39,7 +39,7 @@
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [args] | <code>\*</code> | Accepts: <br>- A start and end point (or values that can be coerced into points) <br>- An array of two points (or values that can be coerced into points) <br>- Another vector instance <br>- A single start point (or value that can be coerced into a point) |
+| [args] | <code>unknown</code> | Accepts: <br>- A start and end point (or values that can be coerced into points) <br>- An array of two points (or values that can be coerced into points) <br>- Another vector instance <br>- A single start point (or value that can be coerced into a point) |
 
 **Example**  
 ``` javascript
@@ -144,7 +144,7 @@ import { Vector } from 'type-enforcer-math';
 
 | Param | Type | Description |
 | --- | --- | --- |
-| value | <code>\*</code> | The value to check. |
+| value | <code>unknown</code> | The value to check. |
 
 
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg

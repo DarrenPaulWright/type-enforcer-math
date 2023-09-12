@@ -21,7 +21,7 @@ import isPoint from './isPoint.js';
  * @function is.vector
  * @alias isVector
  *
- * @param {*} value
+ * @param {unknown} value
  * @param {boolean} [coerce=false] - If true then see if the value can be coerced into a Vector
  *
  * @returns {boolean}

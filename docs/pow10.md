@@ -13,13 +13,13 @@
 
 <br><a name="pow10"></a>
 
-## pow10(n) ⇒ <code>number.int</code>
+## pow10(n) ⇒ <code>number</code>
 > Performance optimized version of Math.pow(10, n) for integers (up to 2x improvement for certain values).
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| n | <code>number.int</code> | Must be an int. |
+| n | <code>number</code> | Must be an int. |
 
 
 [npm]: https://img.shields.io/npm/v/type-enforcer-math.svg

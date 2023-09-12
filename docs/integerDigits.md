@@ -13,7 +13,7 @@
 
 <br><a name="integerDigits"></a>
 
-## integerDigits(value) ⇒ <code>number.int</code>
+## integerDigits(value) ⇒ <code>number</code>
 > Gets the number of digits to the left of the decimal point.
 
 
