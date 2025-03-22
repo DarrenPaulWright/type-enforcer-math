@@ -2,15 +2,20 @@
 	"exclude": [
 		"node_modules"
 	],
-	"include": [
-		"index.js"
-	],
+	"module": "nodenext",
 	"compilerOptions": {
-		"allowJs": true,
-		"declaration": true,
-		"emitDeclarationOnly": true,
-		"outDir": "types",
-		"declarationMap": true,
-		"skipLibCheck": true
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"strict": true,
+		"alwaysStrict": true,
+		"exactOptionalPropertyTypes": true,
+		"noImplicitAny": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"strictFunctionTypes": true,
+		"strictNullChecks": true,
+		"skipLibCheck": true,
+		"allowSyntheticDefaultImports": true
 	}
 }
